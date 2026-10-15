@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="opsBg" x1="0%" y1="0%" x2="100%" x2="100%">
+      <stop offset="0%" stop-color="#0F766E"/>
+      <stop offset="100%" stop-color="#0B3C5D"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="58" fill="url(#opsBg)" stroke="#F5B700" stroke-width="4"/>
+  <!-- Hair long -->
+  <path d="M38 48c0-16 10-24 22-24s22 8 22 24v20c-5-2-12-3-22-3s-17 1-22 3V48z" fill="#78350F"/>
+  <!-- Head -->
+  <circle cx="60" cy="48" r="19" fill="#FBD38D"/>
+  <!-- Hair bangs -->
+  <path d="M42 42c6-6 12-8 18-8s12 2 18 8c-6-2-12-3-18-3s-12 1-18 3z" fill="#78350F"/>
+  <!-- Clothes Jacket -->
+  <path d="M28 100c4-20 16-30 32-30s28 10 32 30z" fill="#E2E8F0"/>
+  <path d="M52 70l8 14 8-14" fill="#F5B700"/>
+</svg>

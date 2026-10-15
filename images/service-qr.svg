@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" width="56" height="56" fill="none">
+  <rect width="56" height="56" rx="16" fill="#F0F4F8"/>
+  <!-- QR pattern -->
+  <rect x="14" y="14" width="10" height="10" rx="2" stroke="#0B3C5D" stroke-width="2.5" fill="#F5B700"/>
+  <rect x="32" y="14" width="10" height="10" rx="2" stroke="#0B3C5D" stroke-width="2.5" fill="#F5B700"/>
+  <rect x="14" y="32" width="10" height="10" rx="2" stroke="#0B3C5D" stroke-width="2.5" fill="#F5B700"/>
+  <rect x="32" y="32" width="4" height="4" fill="#0B3C5D"/>
+  <rect x="38" y="38" width="4" height="4" fill="#0B3C5D"/>
+  <rect x="32" y="38" width="4" height="4" fill="#0B3C5D"/>
+  <rect x="38" y="32" width="4" height="4" fill="#F5B700"/>
+  <rect x="25" y="25" width="6" height="6" rx="1" fill="#0B3C5D"/>
+</svg>

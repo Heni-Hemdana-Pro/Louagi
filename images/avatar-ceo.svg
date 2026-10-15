@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="ceoBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B3C5D"/>
+      <stop offset="100%" stop-color="#145374"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="58" fill="url(#ceoBg)" stroke="#F5B700" stroke-width="4"/>
+  <!-- Head & Shoulders stylized -->
+  <circle cx="60" cy="46" r="20" fill="#FBD38D"/>
+  <!-- Hair -->
+  <path d="M40 44c0-12 10-18 20-18s20 6 20 18c0 3-4 5-8 5-4 0-6-3-12-3s-8 3-12 3c-4 0-8-2-8-5z" fill="#2D3748"/>
+  <!-- Suit / Collar -->
+  <path d="M28 100c4-22 18-32 32-32s28 10 32 32z" fill="#FFFFFF"/>
+  <polygon points="60,78 52,95 68,95" fill="#F5B700"/>
+  <polygon points="60,95 56,112 64,112" fill="#E0A300"/>
+</svg>

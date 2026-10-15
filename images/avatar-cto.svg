@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="ctoBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E3A8A"/>
+      <stop offset="100%" stop-color="#0B3C5D"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="58" fill="url(#ctoBg)" stroke="#F5B700" stroke-width="4"/>
+  <!-- Hair background -->
+  <ellipse cx="60" cy="50" rx="25" ry="28" fill="#1A202C"/>
+  <!-- Head -->
+  <circle cx="60" cy="48" r="19" fill="#ED8936"/>
+  <!-- Front Hair -->
+  <path d="M41 40c4-10 12-14 19-14 8 0 16 4 19 14-3-3-9-5-19-5s-16 2-19 5z" fill="#1A202C"/>
+  <!-- Glasses -->
+  <rect x="46" y="44" width="11" height="8" rx="2" fill="none" stroke="#F5B700" stroke-width="2"/>
+  <rect x="63" y="44" width="11" height="8" rx="2" fill="none" stroke="#F5B700" stroke-width="2"/>
+  <line x1="57" y1="48" x2="63" y2="48" stroke="#F5B700" stroke-width="2"/>
+  <!-- Clothes -->
+  <path d="M28 100c4-20 16-30 32-30s28 10 32 30z" fill="#3B82F6"/>
+  <polygon points="60,70 54,82 66,82" fill="#FBD38D"/>
+</svg>
