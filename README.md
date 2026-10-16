@@ -2,7 +2,7 @@
 
 > **Mini projet web universitaire**  
 > **Établissement :** ISSAT Sousse — Département Informatique  
-> **Niveau & Année :** FIA3 — Année Universitaire 2025 / 2026  
+> **Niveau & Année :** FIA2 — Année Universitaire 2026 / 2027  
 > **Sujet 1 :** Page d'accueil d'une startup fictive (« Louagi »)  
 > **Slogan :** *« Réservez votre place, pas votre attente. »*
 
