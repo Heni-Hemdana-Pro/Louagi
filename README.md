@@ -36,8 +36,8 @@ Elle résout le problème historique des stations de louage (attente aléatoire,
 ├── style.css                    # Feuille de styles unique et commentée
 ├── README.md                    # Documentation du projet
 ├── /images                      # Logos, illustrations de louage et icônes SVG
-│   ├── logo.svg
-│   ├── louage-hero.svg
+│   ├── Logo Louagi _ navette et repère jaune.png
+│   ├── Réservation Louagi à la station tunisienne.png
 │   ├── icon-*.svg
 │   ├── service-*.svg
 │   ├── avatar-*.svg
