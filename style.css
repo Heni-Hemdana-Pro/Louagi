@@ -1,8 +1,3 @@
-/* LOUAGI - Feuille de style
-   Mini-projet Web - ISSAT Sousse (FIA3, 2025/2026)
-   HTML5 et CSS3 pur - aucun framework, aucun JavaScript */
-
-/* Variables */
 :root {
   --primary: #0B3C5D;
   --primary-dark: #07263C;
@@ -298,7 +293,6 @@ button, input, select, textarea { font: inherit; color: inherit; }
   100% { transform: translateY(-8px); }
 }
 
-/* Tablette (< 1024px) */
 @media screen and (max-width: 1023px) {
   .hero-container { grid-template-columns: 1fr; gap: 36px; }
   .hero-visual { max-width: 480px; margin: 0 auto; }
@@ -307,7 +301,6 @@ button, input, select, textarea { font: inherit; color: inherit; }
   .steps-grid, .testimonials-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
 }
 
-/* Mobile (< 768px) */
 @media screen and (max-width: 767px) {
   :root { --header-h: 70px; }
   .burger-btn { display: flex; }
@@ -336,7 +329,6 @@ button, input, select, textarea { font: inherit; color: inherit; }
   .footer-sep { display: none; }
 }
 
-/* Accessibilité : préférence mouvement réduit */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
   .hero-illustration-wrapper { animation: none !important; transform: none !important; }
