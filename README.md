@@ -74,11 +74,3 @@ Elle résout le problème historique des stations de louage (attente aléatoire,
 9. **Contact (`#contact`) :** Formulaire complet avec validation HTML5 native (`required`, `type="email"`, `type="tel"`, `minlength`), coordonnées réelles de Sousse et liens réseaux sociaux.
 10. **Footer institutionnel :** Liens rapides, mentions légales et mention obligatoire : *« Projet académique fictif, ISSAT Sousse, 2025/2026 »*.
 11. **Prise en charge de `prefers-reduced-motion` :** Désactivation propre des animations pour les utilisateurs ayant activé l'option d'accessibilité.
-
----
-
-## 6. Lancement Local
-
-Pour visualiser le site en local :
-- Ouvrir directement `index.html` dans n'importe quel navigateur moderne (Chrome, Edge, Firefox, Safari).
-- Ou démarrer un serveur local de test (ex. `python -m http.server 8080`).
