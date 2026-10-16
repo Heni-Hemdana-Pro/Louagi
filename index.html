@@ -8,15 +8,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="preload" as="image" href="images/hero-station-louagi.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="images/hero-station-louagi.webp" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
   <header class="site-header" id="header">
     <div class="header-container">
       <a href="#accueil" class="brand-logo" aria-label="Retour à l'accueil Louagi">
-        <img src="images/Logo_Louagi___navette_et_repère_jaune.png" alt="Logo Louagi" width="46" height="46" class="logo-img" fetchpriority="high" decoding="async">
+        <img src="images/Logo_Louagi___navette_et_repère_jaune.png" alt="Logo Louagi" width="46" height="46" class="logo-img" fetchpriority="high">
         <span class="brand-name">Loua<span class="brand-name--accent">gi</span></span>
       </a>
       <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Afficher ou masquer le menu de navigation">
@@ -38,10 +39,12 @@
           </li>
         </ul>
       </nav>
-
     </div>
   </header>
+
   <main id="main-content">
+
+    <!-- HERO -->
     <section class="hero-section" id="accueil">
       <div class="hero-container">
         <div class="hero-content">
@@ -58,8 +61,7 @@
               <div class="form-grid">
                 <div class="form-group">
                   <label for="depart" class="form-label">
-                    <img src="images/icon-location.svg" alt="" width="16" height="16" class="form-icon">
-                    Ville de départ
+                    <img src="images/icon-location.svg" alt="" width="16" height="16"> Ville de départ
                   </label>
                   <select id="depart" name="depart" class="form-select" required>
                     <option value="" disabled selected>Choisir une station</option>
@@ -76,8 +78,7 @@
                 </div>
                 <div class="form-group">
                   <label for="destination" class="form-label">
-                    <img src="images/icon-location.svg" alt="" width="16" height="16" class="form-icon">
-                    Destination
+                    <img src="images/icon-location.svg" alt="" width="16" height="16"> Destination
                   </label>
                   <select id="destination" name="destination" class="form-select" required>
                     <option value="" disabled selected>Où allez-vous ?</option>
@@ -94,15 +95,13 @@
                 </div>
                 <div class="form-group">
                   <label for="date-voyage" class="form-label">
-                    <img src="images/icon-calendar.svg" alt="" width="16" height="16" class="form-icon">
-                    Date du trajet
+                    <img src="images/icon-calendar.svg" alt="" width="16" height="16"> Date du trajet
                   </label>
                   <input type="date" id="date-voyage" name="date" class="form-input" required>
                 </div>
                 <div class="form-group">
                   <label for="heure-voyage" class="form-label">
-                    <img src="images/icon-clock.svg" alt="" width="16" height="16" class="form-icon">
-                    Heure estimée
+                    <img src="images/icon-clock.svg" alt="" width="16" height="16"> Heure estimée
                   </label>
                   <input type="time" id="heure-voyage" name="heure" class="form-input" required>
                 </div>
@@ -117,275 +116,209 @@
           </div>
           <div class="trust-indicators animate-fade-in-4">
             <div class="trust-item">
-              <img src="images/icon-destinations.svg" alt="" width="22" height="22" class="trust-icon">
-              <span class="trust-text"><strong>25</strong> destinations reliées</span>
+              <img src="images/icon-destinations.svg" alt="" width="22" height="22">
+              <span><strong>25</strong> destinations reliées</span>
             </div>
             <div class="trust-item">
-              <img src="images/icon-shield.svg" alt="" width="22" height="22" class="trust-icon">
-              <span class="trust-text"><strong>Annulation gratuite</strong> jusqu'à 30 min</span>
+              <img src="images/icon-shield.svg" alt="" width="22" height="22">
+              <span><strong>Annulation gratuite</strong> jusqu'à 30 min</span>
             </div>
             <div class="trust-item">
-              <img src="images/icon-wallet.svg" alt="" width="22" height="22" class="trust-icon">
-              <span class="trust-text"><strong>Paiement flexible</strong> (carte ou station)</span>
+              <img src="images/icon-wallet.svg" alt="" width="22" height="22">
+              <span><strong>Paiement flexible</strong> (carte ou station)</span>
             </div>
           </div>
-
         </div>
         <div class="hero-visual animate-fade-in-4">
           <div class="hero-illustration-wrapper">
             <picture>
               <source srcset="images/hero-station-louagi.webp" type="image/webp">
-              <img src="images/R%C3%A9servation%20Louagi%20%C3%A0%20la%20station%20tunisienne.png" alt="Voyageur avec son smartphone confirmant sa place à la Station Louagi en Tunisie" width="530" height="530" class="hero-illustration-img" fetchpriority="high" decoding="async">
+              <img src="images/Réservation Louagi à la station tunisienne.png" alt="Voyageur confirmant sa réservation à la station Louagi" width="530" height="530" class="hero-illustration-img" fetchpriority="high">
             </picture>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- À PROPOS -->
     <section class="section section--alt" id="apropos">
       <div class="container">
-        
         <header class="section-header">
           <span class="section-tag">Notre Mission</span>
           <h2 class="section-title">En finir avec l'attente incertaine aux stations</h2>
-          <p class="section-lead">
-            Louagi transforme l'expérience du transport le plus populaire de Tunisie grâce au numérique.
-          </p>
+          <p class="section-lead">Louagi transforme l'expérience du transport le plus populaire de Tunisie grâce au numérique.</p>
         </header>
-
         <div class="about-grid">
-          <article class="about-card about-card--problem">
+          <article class="about-card">
             <div class="about-card__header">
               <span class="status-pill status-pill--danger">Le problème actuel</span>
               <h3 class="about-card__title">L'attente imprévisible</h3>
             </div>
             <p class="about-card__text">
-              Au louage traditionnel, le véhicule ne démarre que lorsqu'il affiche complet. Les voyageurs arrivent à la station sans certitude sur l'heure de départ, contraints d'attendre de longues dizaines de minutes sous une météo parfois difficile, avec la crainte permanente de ne pas trouver de place aux heures de pointe.
+              Au louage traditionnel, le véhicule ne démarre que lorsqu'il affiche complet. Les voyageurs arrivent à la station sans certitude sur l'heure de départ, contraints d'attendre de longues minutes sous une météo difficile, avec la crainte de ne pas trouver de place aux heures de pointe.
             </p>
           </article>
-          <article class="about-card about-card--solution">
+          <article class="about-card">
             <div class="about-card__header">
               <span class="status-pill status-pill--success">La solution Louagi</span>
               <h3 class="about-card__title">La réservation programmée</h3>
             </div>
             <p class="about-card__text">
-              Louagi modernise le transport interurbain tunisien en digitalisant la relation entre voyageurs et chauffeurs. Vous réservez votre siège numéroté en amont depuis votre smartphone : à votre arrivée en station, votre louage est confirmé, votre place est gardée et votre horaire est respecté.
+              Louagi modernise le transport interurbain tunisien en digitalisant la relation entre voyageurs et chauffeurs. Vous réservez votre siège numéroté depuis votre smartphone : à votre arrivée en station, votre place est gardée et votre horaire est respecté.
             </p>
           </article>
-
         </div>
         <div class="about-story">
-          <p class="about-story__text">
-            Née de l'observation quotidienne des étudiants et des professionnels tunisiens reliant chaque semaine Tunis, Sousse, Sfax, le Sahel et le Cap Bon, Louagi valorise le métier des chauffeurs de louage tout en apportant aux usagers la sérénité du voyage organisé. Notre ambition est de mailler l'ensemble des 24 gouvernorats dans un réseau fluide, ponctuel et accessible à tous les budgets.
-          </p>
+          <p>Née de l'observation quotidienne des étudiants et professionnels tunisiens reliant Tunis, Sousse, Sfax et le Sahel, Louagi valorise le métier des chauffeurs tout en apportant aux usagers la sérénité du voyage organisé. Notre ambition est de mailler l'ensemble des 24 gouvernorats dans un réseau fluide, ponctuel et accessible.</p>
         </div>
         <div class="stats-wrapper">
           <div class="stats-grid">
-            
             <div class="stat-card">
-              <div class="stat-icon-wrap">
-                <img src="images/icon-destinations.svg" alt="" width="28" height="28" loading="lazy" decoding="async">
-              </div>
+              <div class="stat-icon-wrap"><img src="images/icon-destinations.svg" alt="" width="28" height="28" loading="lazy"></div>
               <div class="stat-number">25</div>
               <div class="stat-label">Destinations nationales</div>
             </div>
-
             <div class="stat-card">
-              <div class="stat-icon-wrap">
-                <img src="images/icon-station.svg" alt="" width="28" height="28" loading="lazy" decoding="async">
-              </div>
+              <div class="stat-icon-wrap"><img src="images/icon-station.svg" alt="" width="28" height="28" loading="lazy"></div>
               <div class="stat-number">120</div>
               <div class="stat-label">Stations partenaires</div>
             </div>
-
             <div class="stat-card">
-              <div class="stat-icon-wrap">
-                <img src="images/icon-users.svg" alt="" width="28" height="28" loading="lazy" decoding="async">
-              </div>
+              <div class="stat-icon-wrap"><img src="images/icon-users.svg" alt="" width="28" height="28" loading="lazy"></div>
               <div class="stat-number">15 000+</div>
               <div class="stat-label">Voyageurs mensuels</div>
             </div>
-
             <div class="stat-card">
-              <div class="stat-icon-wrap">
-                <img src="images/icon-star.svg" alt="" width="28" height="28" loading="lazy" decoding="async">
-              </div>
+              <div class="stat-icon-wrap"><img src="images/icon-star.svg" alt="" width="28" height="28" loading="lazy"></div>
               <div class="stat-number">4,8 / 5</div>
               <div class="stat-label">Satisfaction client</div>
             </div>
-
           </div>
         </div>
-
       </div>
     </section>
+
+    <!-- COMMENT ÇA MARCHE -->
     <section class="section" id="comment-ca-marche">
       <div class="container">
-        
         <header class="section-header">
           <span class="section-tag">Simplicité</span>
           <h2 class="section-title">Comment ça marche ?</h2>
           <p class="section-lead">Trois étapes simples suffisent pour voyager sans aucune attente.</p>
         </header>
-
         <div class="steps-grid">
           <article class="step-card">
             <div class="step-badge">1</div>
-            <div class="step-icon-box">
-              <img src="images/icon-step-search.svg" alt="" width="56" height="56" loading="lazy" decoding="async">
-            </div>
+            <div class="step-icon-box"><img src="images/icon-step-search.svg" alt="" width="56" height="56" loading="lazy"></div>
             <h3 class="step-title">Choisissez votre trajet</h3>
-            <p class="step-desc">
-              Indiquez votre ville de départ, votre destination, votre date souhaitée et votre créneau horaire préféré en quelques clics.
-            </p>
+            <p class="step-desc">Indiquez votre ville de départ, votre destination, votre date souhaitée et votre créneau horaire préféré en quelques clics.</p>
           </article>
           <article class="step-card">
             <div class="step-badge">2</div>
-            <div class="step-icon-box">
-              <img src="images/icon-step-ticket.svg" alt="" width="56" height="56" loading="lazy" decoding="async">
-            </div>
+            <div class="step-icon-box"><img src="images/icon-step-ticket.svg" alt="" width="56" height="56" loading="lazy"></div>
             <h3 class="step-title">Réservez votre billet QR</h3>
-            <p class="step-desc">
-              Sélectionnez votre siège dans le véhicule et validez votre réservation. Votre e-billet avec QR code sécurisé est immédiatement généré.
-            </p>
+            <p class="step-desc">Sélectionnez votre siège et validez. Votre e-billet avec QR code sécurisé est immédiatement généré.</p>
           </article>
           <article class="step-card">
             <div class="step-badge">3</div>
-            <div class="step-icon-box">
-              <img src="images/icon-step-louage.svg" alt="" width="56" height="56" loading="lazy" decoding="async">
-            </div>
+            <div class="step-icon-box"><img src="images/icon-step-louage.svg" alt="" width="56" height="56" loading="lazy"></div>
             <h3 class="step-title">Voyagez sereinement</h3>
-            <p class="step-desc">
-              Rendez-vous à la station quelques minutes avant le départ. Votre louage est identifié, votre place vous attend, le départ est ponctuel.
-            </p>
+            <p class="step-desc">Rendez-vous à la station quelques minutes avant le départ. Votre louage est identifié, votre place vous attend, le départ est ponctuel.</p>
           </article>
-
         </div>
-
       </div>
     </section>
+
+    <!-- SERVICES -->
     <section class="section section--alt" id="services">
       <div class="container">
-        
         <header class="section-header">
           <span class="section-tag">Nos Avantages</span>
           <h2 class="section-title">Des services conçus pour votre confort</h2>
           <p class="section-lead">Une solution technologique complète pour moderniser vos déplacements quotidiens.</p>
         </header>
-
         <div class="services-grid">
           <article class="service-card">
-            <div class="service-icon">
-              <img src="images/service-booking.svg" alt="" width="56" height="56" loading="lazy" decoding="async">
-            </div>
+            <div class="service-icon"><img src="images/service-booking.svg" alt="" width="56" height="56" loading="lazy"></div>
             <h3 class="service-title">Réservation à distance</h3>
-            <p class="service-desc">
-              Bloquez votre siège depuis chez vous, votre bureau ou votre faculté jusqu'à 7 jours à l'avance sans vous déplacer préalablement en station.
-            </p>
+            <p class="service-desc">Bloquez votre siège depuis chez vous, votre bureau ou votre faculté jusqu'à 7 jours à l'avance sans vous déplacer en station.</p>
           </article>
           <article class="service-card">
-            <div class="service-icon">
-              <img src="images/service-seat.svg" alt="" width="56" height="56" loading="lazy" decoding="async">
-            </div>
+            <div class="service-icon"><img src="images/service-seat.svg" alt="" width="56" height="56" loading="lazy"></div>
             <h3 class="service-title">Choix de la place</h3>
-            <p class="service-desc">
-              Visualisez le plan des 8 sièges du louage et sélectionnez votre emplacement préféré : près de la fenêtre, à l'avant ou à l'arrière.
-            </p>
+            <p class="service-desc">Visualisez le plan des 8 sièges du louage et sélectionnez votre emplacement préféré : fenêtre, avant ou arrière.</p>
           </article>
           <article class="service-card">
-            <div class="service-icon">
-              <img src="images/service-qr.svg" alt="" width="56" height="56" loading="lazy" decoding="async">
-            </div>
+            <div class="service-icon"><img src="images/service-qr.svg" alt="" width="56" height="56" loading="lazy"></div>
             <h3 class="service-title">Billet QR code</h3>
-            <p class="service-desc">
-              Un e-billet dématérialisé avec QR code unique accessible hors ligne sur votre mobile, scanné en une seconde par le chauffeur ou le chef de station.
-            </p>
+            <p class="service-desc">Un e-billet dématérialisé avec QR code unique accessible hors ligne sur votre mobile, scanné en une seconde par le chauffeur.</p>
           </article>
           <article class="service-card">
-            <div class="service-icon">
-              <img src="images/service-payment.svg" alt="" width="56" height="56" loading="lazy" decoding="async">
-            </div>
+            <div class="service-icon"><img src="images/service-payment.svg" alt="" width="56" height="56" loading="lazy"></div>
             <h3 class="service-title">Paiement flexible</h3>
-            <p class="service-desc">
-              Réglez en toute sécurité par carte bancaire tunisienne, portefeuille électronique ou choisissez le règlement en espèces directement au guichet de la station.
-            </p>
+            <p class="service-desc">Réglez par carte bancaire tunisienne, portefeuille électronique ou choisissez le règlement en espèces au guichet de la station.</p>
           </article>
           <article class="service-card">
-            <div class="service-icon">
-              <img src="images/service-notification.svg" alt="" width="56" height="56" loading="lazy" decoding="async">
-            </div>
+            <div class="service-icon"><img src="images/service-notification.svg" alt="" width="56" height="56" loading="lazy"></div>
             <h3 class="service-title">Suivi et notifications</h3>
-            <p class="service-desc">
-              Recevez des alertes SMS et notifications en direct sur l'état de votre louage : en attente, presque plein, ou départ imminent dans 15 minutes.
-            </p>
+            <p class="service-desc">Recevez des alertes SMS en direct sur l'état de votre louage : en attente, presque plein, ou départ imminent dans 15 minutes.</p>
           </article>
           <article class="service-card">
-            <div class="service-icon">
-              <img src="images/service-loyalty.svg" alt="" width="56" height="56" loading="lazy" decoding="async">
-            </div>
+            <div class="service-icon"><img src="images/service-loyalty.svg" alt="" width="56" height="56" loading="lazy"></div>
             <h3 class="service-title">Programme de fidélité</h3>
-            <p class="service-desc">
-              Cumulez des points à chaque trajet interurbain. Votre 10ᵉ voyage bénéficie d'une réduction exclusive de 50 % sur votre destination habituelle.
-            </p>
+            <p class="service-desc">Cumulez des points à chaque trajet. Votre 10ᵉ voyage bénéficie d'une réduction exclusive de 50 % sur votre destination habituelle.</p>
           </article>
         </div>
       </div>
     </section>
+
+    <!-- ÉQUIPE -->
     <section class="section" id="equipe">
       <div class="container">
-        
         <header class="section-header">
           <span class="section-tag">Les Fondateurs</span>
           <h2 class="section-title">L'équipe derrière Louagi</h2>
           <p class="section-lead">Des talents tunisiens unis pour révolutionner la mobilité interurbaine.</p>
         </header>
-
         <div class="team-grid">
           <article class="team-card">
             <div class="team-avatar-wrap">
-              <img src="images/avatar-ceo.svg" alt="Portrait de Yassine Ben Salem" width="110" height="110" class="team-avatar" loading="lazy" decoding="async">
+              <img src="images/avatar-ceo.svg" alt="Portrait de Yassine Ben Salem" width="110" height="110" class="team-avatar" loading="lazy">
             </div>
             <h3 class="team-name">Yassine Ben Salem</h3>
             <span class="team-role">CEO &amp; Co-fondateur</span>
-            <p class="team-bio">
-              Passionné par la mobilité durable et l'impact social des technologies dans le transport tunisien.
-            </p>
+            <p class="team-bio">Passionné par la mobilité durable et l'impact social des technologies dans le transport tunisien.</p>
           </article>
           <article class="team-card">
             <div class="team-avatar-wrap">
-              <img src="images/avatar-cto.svg" alt="Portrait de Mariem Mansour" width="110" height="110" class="team-avatar" loading="lazy" decoding="async">
+              <img src="images/avatar-cto.svg" alt="Portrait de Mariem Mansour" width="110" height="110" class="team-avatar" loading="lazy">
             </div>
             <h3 class="team-name">Mariem Mansour</h3>
             <span class="team-role">Directrice Technique (CTO)</span>
-            <p class="team-bio">
-              Architecte logicielle experte en systèmes distribués temps réel et en fiabilité d'infrastructure.
-            </p>
+            <p class="team-bio">Architecte logicielle experte en systèmes distribués temps réel et en fiabilité d'infrastructure.</p>
           </article>
           <article class="team-card">
             <div class="team-avatar-wrap">
-              <img src="images/avatar-design.svg" alt="Portrait de Aziz Trabelsi" width="110" height="110" class="team-avatar" loading="lazy" decoding="async">
+              <img src="images/avatar-design.svg" alt="Portrait de Aziz Trabelsi" width="110" height="110" class="team-avatar" loading="lazy">
             </div>
             <h3 class="team-name">Aziz Trabelsi</h3>
             <span class="team-role">Responsable Design &amp; UX</span>
-            <p class="team-bio">
-              Dévoué à concevoir des parcours intuitifs et accessibles pour chaque voyageur, quel que soit son âge.
-            </p>
+            <p class="team-bio">Dévoué à concevoir des parcours intuitifs et accessibles pour chaque voyageur, quel que soit son âge.</p>
           </article>
           <article class="team-card">
             <div class="team-avatar-wrap">
-              <img src="images/avatar-ops.svg" alt="Portrait de Nour Ben Amor" width="110" height="110" class="team-avatar" loading="lazy" decoding="async">
+              <img src="images/avatar-ops.svg" alt="Portrait de Nour Ben Amor" width="110" height="110" class="team-avatar" loading="lazy">
             </div>
             <h3 class="team-name">Nour Ben Amor</h3>
             <span class="team-role">Responsable Opérations</span>
-            <p class="team-bio">
-              En relation quotidienne avec les syndicats de chauffeurs et les gestionnaires de stations à travers la Tunisie.
-            </p>
+            <p class="team-bio">En relation quotidienne avec les syndicats de chauffeurs et les gestionnaires de stations à travers la Tunisie.</p>
           </article>
         </div>
-        <p class="team-disclaimer">
-          * Noms fictifs attribués dans le cadre du projet académique ISSAT Sousse, destinés à être personnalisés par les étudiants de l'équipe de projet.
-        </p>
+        <p class="team-disclaimer">* Noms fictifs dans le cadre du projet académique ISSAT Sousse, à personnaliser par les étudiants de l'équipe.</p>
       </div>
     </section>
+
+    <!-- TÉMOIGNAGES & FAQ -->
     <section class="section section--alt" id="faq-temoignages">
       <div class="container">
         <header class="section-header">
@@ -393,21 +326,18 @@
           <h2 class="section-title">Ce que disent nos voyageurs</h2>
           <p class="section-lead">Des milliers d'étudiants et de professionnels voyagent déjà sans stress.</p>
         </header>
-
         <div class="testimonials-grid">
           <article class="testimonial-card">
-            <div class="testimonial-rating">
-              <img src="images/icon-star.svg" alt="" width="18" height="18" loading="lazy" decoding="async">
-              <img src="images/icon-star.svg" alt="" width="18" height="18" loading="lazy" decoding="async">
-              <img src="images/icon-star.svg" alt="" width="18" height="18" loading="lazy" decoding="async">
-              <img src="images/icon-star.svg" alt="" width="18" height="18" loading="lazy" decoding="async">
-              <img src="images/icon-star.svg" alt="" width="18" height="18" loading="lazy" decoding="async">
+            <div class="testimonial-rating" aria-label="Note : 5 étoiles sur 5">
+              <img src="images/icon-star.svg" alt="" width="18" height="18" loading="lazy">
+              <img src="images/icon-star.svg" alt="" width="18" height="18" loading="lazy">
+              <img src="images/icon-star.svg" alt="" width="18" height="18" loading="lazy">
+              <img src="images/icon-star.svg" alt="" width="18" height="18" loading="lazy">
+              <img src="images/icon-star.svg" alt="" width="18" height="18" loading="lazy">
             </div>
-            <blockquote class="testimonial-quote">
-              « Fini le calvaire du dimanche soir à Bab Alioua ! Je réserve mon siège Sousse-Tunis dès le vendredi soir. J'arrive à la station 5 minutes avant, ma place est réservée. »
-            </blockquote>
+            <blockquote class="testimonial-quote">« Fini le calvaire du dimanche soir à Bab Alioua ! Je réserve mon siège Sousse-Tunis dès le vendredi. J'arrive à la station 5 minutes avant, ma place est réservée. »</blockquote>
             <div class="testimonial-author">
-              <img src="images/avatar-user1.svg" alt="Avatar Ahmed" width="48" height="48" class="testimonial-avatar" loading="lazy" decoding="async">
+              <img src="images/avatar-user1.svg" alt="Avatar Ahmed" width="48" height="48" class="testimonial-avatar" loading="lazy">
               <div>
                 <h3 class="testimonial-name">Ahmed K.</h3>
                 <span class="testimonial-meta">Étudiant à Sousse</span>
@@ -415,18 +345,16 @@
             </div>
           </article>
           <article class="testimonial-card">
-            <div class="testimonial-rating">
-              <img src="images/icon-star.svg" alt="" width="18" height="18" loading="lazy" decoding="async">
-              <img src="images/icon-star.svg" alt="" width="18" height="18" loading="lazy" decoding="async">
-              <img src="images/icon-star.svg" alt="" width="18" height="18" loading="lazy" decoding="async">
-              <img src="images/icon-star.svg" alt="" width="18" height="18" loading="lazy" decoding="async">
-              <img src="images/icon-star.svg" alt="" width="18" height="18" loading="lazy" decoding="async">
+            <div class="testimonial-rating" aria-label="Note : 5 étoiles sur 5">
+              <img src="images/icon-star.svg" alt="" width="18" height="18" loading="lazy">
+              <img src="images/icon-star.svg" alt="" width="18" height="18" loading="lazy">
+              <img src="images/icon-star.svg" alt="" width="18" height="18" loading="lazy">
+              <img src="images/icon-star.svg" alt="" width="18" height="18" loading="lazy">
+              <img src="images/icon-star.svg" alt="" width="18" height="18" loading="lazy">
             </div>
-            <blockquote class="testimonial-quote">
-              « Pour mes déplacements réguliers entre Tunis et Sfax, Louagi me fait économiser au moins une heure d'attente à chaque voyage. Le suivi du véhicule par notification est impeccable. »
-            </blockquote>
+            <blockquote class="testimonial-quote">« Pour mes trajets réguliers Tunis-Sfax, Louagi me fait économiser au moins une heure d'attente à chaque voyage. Le suivi par notification est impeccable. »</blockquote>
             <div class="testimonial-author">
-              <img src="images/avatar-user2.svg" alt="Avatar Salma" width="48" height="48" class="testimonial-avatar" loading="lazy" decoding="async">
+              <img src="images/avatar-user2.svg" alt="Avatar Salma" width="48" height="48" class="testimonial-avatar" loading="lazy">
               <div>
                 <h3 class="testimonial-name">Salma M.</h3>
                 <span class="testimonial-meta">Ingénieure à Tunis</span>
@@ -434,135 +362,108 @@
             </div>
           </article>
           <article class="testimonial-card">
-            <div class="testimonial-rating">
-              <img src="images/icon-star.svg" alt="" width="18" height="18" loading="lazy" decoding="async">
-              <img src="images/icon-star.svg" alt="" width="18" height="18" loading="lazy" decoding="async">
-              <img src="images/icon-star.svg" alt="" width="18" height="18" loading="lazy" decoding="async">
-              <img src="images/icon-star.svg" alt="" width="18" height="18" loading="lazy" decoding="async">
-              <img src="images/icon-star.svg" alt="" width="18" height="18" loading="lazy" decoding="async">
+            <div class="testimonial-rating" aria-label="Note : 5 étoiles sur 5">
+              <img src="images/icon-star.svg" alt="" width="18" height="18" loading="lazy">
+              <img src="images/icon-star.svg" alt="" width="18" height="18" loading="lazy">
+              <img src="images/icon-star.svg" alt="" width="18" height="18" loading="lazy">
+              <img src="images/icon-star.svg" alt="" width="18" height="18" loading="lazy">
+              <img src="images/icon-star.svg" alt="" width="18" height="18" loading="lazy">
             </div>
-            <blockquote class="testimonial-quote">
-              « Le billet QR code fonctionne même sans connexion internet dans la station. J'ai pu payer en espèces au guichet en montrant ma réservation. Un service indispensable. »
-            </blockquote>
+            <blockquote class="testimonial-quote">« Le billet QR fonctionne même sans connexion internet. J'ai payé en espèces au guichet en montrant ma réservation. Un service indispensable. »</blockquote>
             <div class="testimonial-author">
-              <img src="images/avatar-user3.svg" alt="Avatar Mohamed" width="48" height="48" class="testimonial-avatar" loading="lazy" decoding="async">
+              <img src="images/avatar-user3.svg" alt="Avatar Mohamed" width="48" height="48" class="testimonial-avatar" loading="lazy">
               <div>
                 <h3 class="testimonial-name">Mohamed B.</h3>
                 <span class="testimonial-meta">Commerçant à Monastir</span>
               </div>
             </div>
           </article>
-
         </div>
+
         <div class="faq-container">
           <header class="section-header faq-header">
             <span class="section-tag">Foire Aux Questions</span>
             <h2 class="section-title">Questions fréquentes</h2>
             <p class="section-lead">Tout ce que vous devez savoir pour voyager avec Louagi en toute confiance.</p>
           </header>
-
           <div class="faq-accordion">
             <details class="faq-item" open>
               <summary class="faq-question">
                 <span>Comment annuler ma réservation ?</span>
-                <img src="images/icon-chevron-down.svg" alt="" width="20" height="20" class="faq-icon" loading="lazy" decoding="async">
+                <img src="images/icon-chevron-down.svg" alt="" width="20" height="20" class="faq-icon" loading="lazy">
               </summary>
               <div class="faq-answer">
-                <p>
-                  L'annulation est <strong>totalement gratuite</strong> jusqu'à 30 minutes avant l'heure de départ prévue. Rendez-vous dans votre espace voyageur, sélectionnez le trajet concerné et cliquez sur « Annuler la réservation ». Si vous aviez payé en ligne, le remboursement est automatiquement recrédité sur votre moyen de paiement initial sous 24 à 48 heures.
-                </p>
+                <p>L'annulation est <strong>totalement gratuite</strong> jusqu'à 30 minutes avant le départ. Rendez-vous dans votre espace voyageur, sélectionnez le trajet et cliquez sur « Annuler ». Le remboursement est recrédité sous 24 à 48 heures.</p>
               </div>
             </details>
             <details class="faq-item">
               <summary class="faq-question">
                 <span>Quels sont les modes de paiement acceptés ?</span>
-                <img src="images/icon-chevron-down.svg" alt="" width="20" height="20" class="faq-icon" loading="lazy" decoding="async">
+                <img src="images/icon-chevron-down.svg" alt="" width="20" height="20" class="faq-icon" loading="lazy">
               </summary>
               <div class="faq-answer">
-                <p>
-                  Louagi s'adapte à tous les usagers : vous pouvez régler en ligne de façon sécurisée par <strong>carte bancaire tunisienne (CIB / Visa / Mastercard)</strong> ou via les portefeuilles électroniques partenaires (D17, Flouci, Sobflous). Vous pouvez également opter pour le <strong>règlement en espèces directement à la station</strong> lors de la validation de votre billet au guichet.
-                </p>
+                <p>Paiement en ligne par <strong>carte bancaire (CIB / Visa / Mastercard)</strong>, portefeuilles électroniques (D17, Flouci, Sobflous) ou en <strong>espèces directement à la station</strong> lors de la validation au guichet.</p>
               </div>
             </details>
             <details class="faq-item">
               <summary class="faq-question">
                 <span>Que se passe-t-il en cas de retard ?</span>
-                <img src="images/icon-chevron-down.svg" alt="" width="20" height="20" class="faq-icon" loading="lazy" decoding="async">
+                <img src="images/icon-chevron-down.svg" alt="" width="20" height="20" class="faq-icon" loading="lazy">
               </summary>
               <div class="faq-answer">
-                <p>
-                  Si vous prévoyez un retard personnel, vous disposez d'un délai de grâce de 10 minutes ou vous pouvez reprogrammer votre réservation sur le départ suivant sans frais. Si le retard provient d'un aléa de circulation du véhicule, vous êtes averti instantanément par notification SMS et vous avez le choix entre attendre le véhicule avec suivi GPS ou être réassigné en priorité absolue sur le louage suivant.
-                </p>
+                <p>Vous disposez d'un délai de grâce de 10 minutes ou pouvez reprogrammer sans frais. Si le retard vient du véhicule, vous êtes averti par SMS et réassigné en priorité sur le louage suivant.</p>
               </div>
             </details>
             <details class="faq-item">
               <summary class="faq-question">
                 <span>Puis-je modifier l'horaire de mon trajet ?</span>
-                <img src="images/icon-chevron-down.svg" alt="" width="20" height="20" class="faq-icon" loading="lazy" decoding="async">
+                <img src="images/icon-chevron-down.svg" alt="" width="20" height="20" class="faq-icon" loading="lazy">
               </summary>
               <div class="faq-answer">
-                <p>
-                  Oui, la modification de date ou d'horaire pour le même itinéraire est <strong>simple et sans frais additionnels</strong> jusqu'à 45 minutes avant l'horaire prévu. Sélectionnez simplement votre nouvelle tranche horaire disponible parmi les départs de la journée.
-                </p>
+                <p>Oui, la modification de date ou d'horaire est <strong>sans frais additionnels</strong> jusqu'à 45 minutes avant le départ prévu. Sélectionnez simplement la nouvelle tranche horaire disponible.</p>
               </div>
             </details>
-
           </div>
         </div>
-
       </div>
     </section>
+
+    <!-- CONTACT -->
     <section class="section" id="contact">
       <div class="container">
-        
         <header class="section-header">
           <span class="section-tag">Échangeons</span>
           <h2 class="section-title">Contactez notre équipe</h2>
-          <p class="section-lead">Une question sur un trajet, un partenariat avec une station ou un retour d'expérience ? Nous sommes à votre écoute.</p>
+          <p class="section-lead">Une question sur un trajet, un partenariat ou un retour d'expérience ? Nous sommes à votre écoute.</p>
         </header>
-
         <div class="contact-grid">
           <div class="contact-info">
             <h3 class="contact-info__title">Nos Coordonnées</h3>
-            <p class="contact-info__desc">
-              L'équipe Louagi est mobilisée 6 jours sur 7 pour accompagner voyageurs et transporteurs partenaires.
-            </p>
-
+            <p class="contact-info__desc">L'équipe Louagi est mobilisée 6 jours sur 7 pour accompagner voyageurs et transporteurs partenaires.</p>
             <ul class="contact-list">
               <li class="contact-item">
-                <div class="contact-icon-box">
-                  <img src="images/icon-map-pin.svg" alt="" width="22" height="22" loading="lazy" decoding="async">
-                </div>
+                <div class="contact-icon-box"><img src="images/icon-map-pin.svg" alt="" width="22" height="22" loading="lazy"></div>
                 <div>
                   <span class="contact-label">Siège social</span>
                   <address class="contact-value">Technopôle de Sousse, Cité Hammam Maarouf, 4000 Sousse, Tunisie</address>
                 </div>
               </li>
-
               <li class="contact-item">
-                <div class="contact-icon-box">
-                  <img src="images/icon-phone.svg" alt="" width="22" height="22" loading="lazy" decoding="async">
-                </div>
+                <div class="contact-icon-box"><img src="images/icon-phone.svg" alt="" width="22" height="22" loading="lazy"></div>
                 <div>
                   <span class="contact-label">Téléphone</span>
                   <a href="tel:+21671000000" class="contact-link">+216 71 000 000</a>
                 </div>
               </li>
-
               <li class="contact-item">
-                <div class="contact-icon-box">
-                  <img src="images/icon-mail.svg" alt="" width="22" height="22" loading="lazy" decoding="async">
-                </div>
+                <div class="contact-icon-box"><img src="images/icon-mail.svg" alt="" width="22" height="22" loading="lazy"></div>
                 <div>
                   <span class="contact-label">Courrier électronique</span>
                   <a href="mailto:contact@louagi.tn" class="contact-link">contact@louagi.tn</a>
                 </div>
               </li>
-
               <li class="contact-item">
-                <div class="contact-icon-box">
-                  <img src="images/icon-clock.svg" alt="" width="22" height="22" loading="lazy" decoding="async">
-                </div>
+                <div class="contact-icon-box"><img src="images/icon-clock.svg" alt="" width="22" height="22" loading="lazy"></div>
                 <div>
                   <span class="contact-label">Horaires d'assistance</span>
                   <span class="contact-value">Lundi - Samedi : 07h00 - 20h00</span>
@@ -573,13 +474,13 @@
               <span class="social-title">Suivez notre actualité :</span>
               <div class="social-links">
                 <a href="#" class="social-link" aria-label="Suivez Louagi sur Facebook">
-                  <img src="images/social-facebook.svg" alt="" width="22" height="22" loading="lazy" decoding="async">
+                  <img src="images/social-facebook.svg" alt="" width="22" height="22" loading="lazy">
                 </a>
                 <a href="#" class="social-link" aria-label="Suivez Louagi sur Instagram">
-                  <img src="images/social-instagram.svg" alt="" width="22" height="22" loading="lazy" decoding="async">
+                  <img src="images/social-instagram.svg" alt="" width="22" height="22" loading="lazy">
                 </a>
                 <a href="#" class="social-link" aria-label="Suivez Louagi sur LinkedIn">
-                  <img src="images/social-linkedin.svg" alt="" width="22" height="22" loading="lazy" decoding="async">
+                  <img src="images/social-linkedin.svg" alt="" width="22" height="22" loading="lazy">
                 </a>
               </div>
             </div>
@@ -613,36 +514,25 @@
                 <label for="contact-message" class="form-label">Votre message <span class="required-mark">*</span></label>
                 <textarea id="contact-message" name="message" class="form-textarea" rows="5" placeholder="Détaillez votre message ici..." required minlength="10"></textarea>
               </div>
-              <button type="submit" class="btn btn--primary btn--block">
-                Envoyer le message
-              </button>
-
+              <button type="submit" class="btn btn--primary btn--block">Envoyer le message</button>
             </form>
           </div>
-
         </div>
-
       </div>
     </section>
 
   </main>
 
-  
   <footer class="site-footer">
     <div class="container">
-      
       <div class="footer-grid">
         <div class="footer-col footer-col--brand">
           <a href="#accueil" class="brand-logo footer-logo" aria-label="Retour au sommet de la page">
-            <img src="images/Logo%20Louagi%20_%20navette%20et%20rep%C3%A8re%20jaune.png" alt="Logo Louagi" width="48" height="48" class="footer-logo-img" loading="lazy" decoding="async">
+            <img src="images/Logo%20Louagi%20_%20navette%20et%20rep%C3%A8re%20jaune.png" alt="Logo Louagi" width="48" height="48" class="footer-logo-img" loading="lazy">
             <span class="brand-name brand-name--footer">Loua<span class="brand-name--accent">gi</span></span>
           </a>
-          <p class="footer-tagline">
-            « Réservez votre place, pas votre attente. »
-          </p>
-          <p class="footer-desc">
-            La solution digitale pour réserver vos trajets en louage interurbain partout en Tunisie avec tranquillité et ponctualité.
-          </p>
+          <p class="footer-tagline">« Réservez votre place, pas votre attente. »</p>
+          <p class="footer-desc">La solution digitale pour réserver vos trajets en louage interurbain partout en Tunisie avec tranquillité et ponctualité.</p>
         </div>
         <div class="footer-col">
           <h4 class="footer-heading">Navigation rapide</h4>
@@ -674,29 +564,25 @@
           </address>
           <div class="footer-socials">
             <a href="#" class="social-link social-link--footer" aria-label="Facebook Louagi">
-              <img src="images/social-facebook.svg" alt="" width="20" height="20" loading="lazy" decoding="async">
+              <img src="images/social-facebook.svg" alt="" width="20" height="20" loading="lazy">
             </a>
             <a href="#" class="social-link social-link--footer" aria-label="Instagram Louagi">
-              <img src="images/social-instagram.svg" alt="" width="20" height="20" loading="lazy" decoding="async">
+              <img src="images/social-instagram.svg" alt="" width="20" height="20" loading="lazy">
             </a>
             <a href="#" class="social-link social-link--footer" aria-label="LinkedIn Louagi">
-              <img src="images/social-linkedin.svg" alt="" width="20" height="20" loading="lazy" decoding="async">
+              <img src="images/social-linkedin.svg" alt="" width="20" height="20" loading="lazy">
             </a>
           </div>
         </div>
-
       </div>
       <div class="footer-bottom">
-        <p class="footer-academic">
-          Projet académique fictif, ISSAT Sousse, 2025/2026.
-        </p>
+        <p class="footer-academic">Projet académique fictif, ISSAT Sousse, 2025/2026.</p>
         <div class="footer-legal">
           <a href="pages/mentions-legales.html" class="footer-link footer-link--sub">Mentions légales &amp; Confidentialité</a>
           <span class="footer-sep">|</span>
           <span>Tous droits réservés &copy; 2026 Louagi</span>
         </div>
       </div>
-
     </div>
   </footer>
 
