@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mes Réservations - Louagi</title>
+  <meta name="description" content="Consultez et gérez vos réservations de louage effectuées sur Louagi.">
+  
+  <!-- Polices Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- Feuilles de style -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../pages.css">
+
+  <!-- Scripts JavaScript (chargement avec defer) -->
+  <script src="../js/stockage.js" defer></script>
+  <script src="../js/mes-reservations.js" defer></script>
+</head>
+<body class="page-app">
+
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+  <!-- En-tête -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" aria-label="Retour à l'accueil Louagi">
+        <img src="../images/Logo%20Louagi%20_%20navette%20et%20rep%C3%A8re%20jaune.png" alt="Logo Louagi" width="46" height="46" class="logo-img">
+        <span class="brand-name">Loua<span class="brand-name--accent">gi</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="../index.html" class="nav-link">Accueil</a></li>
+          <li class="nav-item"><a href="reservation.html" class="nav-link">Réserver</a></li>
+          <li class="nav-item"><a href="connexion.html" class="nav-link" onclick="localStorage.removeItem('louagi_session');">Déconnexion</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenu principal -->
+  <main id="main-content" class="main-content">
+    <div class="container">
+      <div class="page-header-box">
+        <h1 class="page-title">Mes Réservations</h1>
+        <p class="page-subtitle">Retrouvez l'historique de vos billets de louage et gérez vos départs.</p>
+      </div>
+
+      <div id="liste-mes-reservations" class="reservations-grid" aria-live="polite">
+        <!-- Rempli dynamiquement par mes-reservations.js -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="footer-section">
+    <div class="container">
+      <div class="footer-bottom">
+        <p class="footer-academic">Projet académique fictif, ISSAT Sousse, 2025/2026.</p>
+        <div class="footer-legal">
+          <a href="mentions-legales.html" class="footer-link footer-link--sub">Mentions légales &amp; Confidentialité</a>
+          <span class="footer-sep">|</span>
+          <span>Tous droits réservés &copy; 2026 Louagi</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

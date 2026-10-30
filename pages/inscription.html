@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Créer un compte - Louagi</title>
+  <meta name="description" content="Inscrivez-vous sur Louagi pour réserver vos places de louage en Tunisie en quelques clics.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../pages.css">
+
+  <script src="../js/stockage.js" defer></script>
+  <script src="../js/inscription.js" defer></script>
+</head>
+<body class="page-app">
+
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+  <!-- En-tête -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" aria-label="Retour à l'accueil Louagi">
+        <img src="../images/Logo%20Louagi%20_%20navette%20et%20rep%C3%A8re%20jaune.png" alt="Logo Louagi" width="46" height="46" class="logo-img">
+        <span class="brand-name">Loua<span class="brand-name--accent">gi</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="../index.html" class="nav-link">Accueil</a></li>
+          <li class="nav-item"><a href="connexion.html" class="nav-link">Se connecter</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenu principal -->
+  <main id="main-content" class="main-content">
+    <div class="container">
+      <div class="auth-wrapper">
+        <div class="page-header-box">
+          <h1 class="page-title">Créer votre compte</h1>
+          <p class="page-subtitle">Rejoignez Louagi et réservez votre siège en toute sérénité.</p>
+        </div>
+
+        <div class="auth-card">
+          <div id="message-erreur" class="alert alert--error cache" role="alert"></div>
+
+          <form id="form-inscription" novalidate>
+            <div class="form-field">
+              <label for="nom" class="form-label">Nom complet</label>
+              <input type="text" id="nom" name="nom" class="form-control" placeholder="Ex. Yassine Ben Salah" required>
+            </div>
+
+            <div class="form-field">
+              <label for="email" class="form-label">Adresse e-mail</label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="nom@exemple.tn" required>
+            </div>
+
+            <div class="form-field">
+              <label for="telephone" class="form-label">Numéro de téléphone</label>
+              <input type="tel" id="telephone" name="telephone" class="form-control" placeholder="Ex. 98123456" pattern="[0-9]{8}" required>
+              <small class="form-hint">8 chiffres tunisiens sans indicatif.</small>
+            </div>
+
+            <div class="form-field">
+              <label for="motDePasse" class="form-label">Mot de passe</label>
+              <input type="password" id="motDePasse" name="motDePasse" class="form-control" placeholder="••••••••" minlength="6" required>
+              <small class="form-hint">Au moins 6 caractères.</small>
+            </div>
+
+            <div class="form-field">
+              <label for="confirmation" class="form-label">Confirmer le mot de passe</label>
+              <input type="password" id="confirmation" name="confirmation" class="form-control" placeholder="••••••••" minlength="6" required>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--block">Créer mon compte</button>
+          </form>
+
+          <div class="auth-footer">
+            <p>Déjà inscrit ? <a href="connexion.html">Se connecter</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="footer-section">
+    <div class="container">
+      <div class="footer-bottom">
+        <p class="footer-academic">Projet académique fictif, ISSAT Sousse, 2025/2026.</p>
+        <div class="footer-legal">
+          <a href="mentions-legales.html" class="footer-link footer-link--sub">Mentions légales &amp; Confidentialité</a>
+          <span class="footer-sep">|</span>
+          <span>Tous droits réservés &copy; 2026 Louagi</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

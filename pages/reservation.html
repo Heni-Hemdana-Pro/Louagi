@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Réserver un louage - Louagi</title>
+  <meta name="description" content="Réservez facilement votre place dans un louage tunisien avec Louagi en 3 étapes simples.">
+  
+  <!-- Polices Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- Feuilles de style -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../pages.css">
+
+  <!-- Scripts JavaScript (chargement dans l'ordre strict avec defer) -->
+  <script src="../js/stockage.js" defer></script>
+  <script src="../js/data.js" defer></script>
+  <script src="../js/reservation.js" defer></script>
+</head>
+<body class="page-app">
+
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+  <!-- En-tête -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" aria-label="Retour à l'accueil Louagi">
+        <img src="../images/Logo%20Louagi%20_%20navette%20et%20rep%C3%A8re%20jaune.png" alt="Logo Louagi" width="46" height="46" class="logo-img">
+        <span class="brand-name">Loua<span class="brand-name--accent">gi</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="../index.html" class="nav-link">Accueil</a></li>
+          <li class="nav-item"><a href="mes-reservations.html" class="nav-link">Mes réservations</a></li>
+          <li class="nav-item"><a href="connexion.html" class="nav-link" onclick="localStorage.removeItem('louagi_session');">Déconnexion</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenu principal -->
+  <main id="main-content" class="main-content">
+    <div class="container">
+      <div class="reservation-flow">
+        <div class="page-header-box">
+          <h1 class="page-title">Réserver votre place</h1>
+          <p class="page-subtitle">Choisissez votre trajet, sélectionnez votre siège et recevez votre billet garanti.</p>
+        </div>
+
+        <!-- Barre de progression des 4 étapes -->
+        <div class="stepper" aria-label="Étapes de réservation">
+          <div id="stepper-1" class="step-item actif">
+            <div class="step-circle">1</div>
+            <span class="step-title">Trajet</span>
+          </div>
+          <div id="step-line-1" class="step-line"></div>
+          <div id="stepper-2" class="step-item">
+            <div class="step-circle">2</div>
+            <span class="step-title">Place</span>
+          </div>
+          <div id="step-line-2" class="step-line"></div>
+          <div id="stepper-3" class="step-item">
+            <div class="step-circle">3</div>
+            <span class="step-title">Paiement</span>
+          </div>
+          <div id="step-line-3" class="step-line"></div>
+          <div id="stepper-4" class="step-item">
+            <div class="step-circle">4</div>
+            <span class="step-title">Confirmation</span>
+          </div>
+        </div>
+
+        <!-- Étape 1 : Recherche de trajet -->
+        <section id="etape-1" class="step-container" aria-labelledby="titre-etape-1">
+          <h2 id="titre-etape-1" class="step-inner-title">Étape 1 : Rechercher un horaire disponible</h2>
+          
+          <form id="form-recherche">
+            <div class="search-inputs-grid">
+              <div class="form-field">
+                <label for="depart" class="form-label">Gare de départ</label>
+                <select id="depart" name="depart" class="form-control" required>
+                  <option value="" disabled selected>Choisir la ville de départ</option>
+                  <option value="Sousse">Sousse</option>
+                  <option value="Tunis">Tunis (Bab Alioua / Moncef Bey)</option>
+                  <option value="Sfax">Sfax (Bab Jebli)</option>
+                  <option value="Monastir">Monastir</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="destination" class="form-label">Destination</label>
+                <select id="destination" name="destination" class="form-control" required>
+                  <option value="" disabled selected>Choisir la destination</option>
+                  <option value="Tunis">Tunis (Bab Alioua / Moncef Bey)</option>
+                  <option value="Sousse">Sousse</option>
+                  <option value="Sfax">Sfax (Bab Jebli)</option>
+                  <option value="Monastir">Monastir</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="date-voyage" class="form-label">Date du voyage</label>
+                <input type="date" id="date-voyage" name="date" class="form-control" required>
+              </div>
+            </div>
+
+            <div class="reservation-form-actions">
+              <button type="submit" class="btn btn--primary">Rechercher les départs</button>
+            </div>
+          </form>
+
+          <!-- Résultats de la recherche -->
+          <div id="liste-trajets" class="trajets-list" aria-live="polite"></div>
+        </section>
+
+      <!-- Étape 2 : Choix du siège -->
+      <section id="etape-2" class="step-container cache" aria-labelledby="titre-etape-2">
+        <h2 id="titre-etape-2" class="step-inner-title">Étape 2 : Choisir votre place dans le louage</h2>
+        <p class="form-hint" style="text-align: center; margin-bottom: 20px;">
+          Cliquez sur un fauteuil libre pour sélectionner votre place (8 places au total : 2 devant, 3 au milieu, 3 au fond).
+        </p>
+
+        <!-- Silhouette du Louage façon plan de cinéma Pathé -->
+        <div class="louage-vehicule">
+          <div class="louage-parebrise">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+            Pare-brise &bull; Avant du Louage
+          </div>
+
+          <div class="louage-habitacle">
+            <!-- Rangée 1 : Avant (Chauffeur à gauche + 2 places passagers) -->
+            <div class="rangee-bloc">
+              <span class="rangee-etiquette">Rangée avant (2 places)</span>
+              <div class="rangee-avant-grille">
+                <!-- Poste Chauffeur avec volant officiel -->
+                <div class="siege-fauteuil siege-fauteuil--chauffeur" title="Poste du Chauffeur (non réservable)">
+                  <span class="fauteuil-tete"></span>
+                  <span class="fauteuil-corps">
+                    <svg class="volant-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="9"></circle>
+                      <circle cx="12" cy="12" r="2.5"></circle>
+                      <line x1="12" y1="3" x2="12" y2="9.5"></line>
+                      <line x1="3" y1="12" x2="9.5" y2="12"></line>
+                      <line x1="14.5" y1="12" x2="21" y2="12"></line>
+                    </svg>
+                    <span class="fauteuil-etat">Chauffeur</span>
+                  </span>
+                  <span class="fauteuil-assise"></span>
+                </div>
+
+                <!-- Places 1 et 2 injectées par JS -->
+                <div id="places-avant" class="places-avant-groupe"></div>
+              </div>
+            </div>
+
+            <!-- Rangée 2 : Milieu (3 places passagers : 3, 4, 5) -->
+            <div class="rangee-bloc">
+              <span class="rangee-etiquette">Rangée intermédiaire (3 places)</span>
+              <div id="places-milieu" class="rangee-trois-places"></div>
+            </div>
+
+            <!-- Rangée 3 : Fond (3 places passagers : 6, 7, 8) -->
+            <div class="rangee-bloc">
+              <span class="rangee-etiquette">Rangée arrière (3 places)</span>
+              <div id="places-arriere" class="rangee-trois-places"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Légende -->
+        <div class="sieges-legende">
+          <div class="legende-item">
+            <span class="legende-pastille legende-pastille--libre"></span>
+            <span>Libre (cliquez pour réserver)</span>
+          </div>
+          <div class="legende-item">
+            <span class="legende-pastille legende-pastille--occupe"></span>
+            <span>Occupée</span>
+          </div>
+          <div class="legende-item">
+            <span class="legende-pastille legende-pastille--choisi"></span>
+            <span>Votre choix</span>
+          </div>
+        </div>
+
+        <div style="margin-top: 24px; text-align: center;">
+          <button type="button" class="btn btn--outline btn--sm" onclick="allerEtape(1);">&larr; Modifier le trajet</button>
+        </div>
+      </section>
+
+      <!-- Étape 3 : Mode de paiement & Validation des conditions -->
+      <section id="etape-3" class="step-container cache" aria-labelledby="titre-etape-3">
+        <h2 id="titre-etape-3" class="step-inner-title">Étape 3 : Mode de paiement &amp; Validation</h2>
+        
+        <!-- Mini récapitulatif compact du voyage -->
+        <div class="paiement-recap-bar">
+          <div class="paiement-recap-items">
+            <span class="paiement-recap-item"><strong>Trajet :</strong> <span id="paiement-recap-trajet">-</span></span>
+            <span class="paiement-recap-item"><strong>Date :</strong> <span id="paiement-recap-date">-</span></span>
+            <span class="paiement-recap-item"><strong>Départ :</strong> <span id="paiement-recap-heure">-</span></span>
+            <span class="paiement-recap-item"><strong>Siège :</strong> <span id="paiement-recap-place">-</span></span>
+            <span class="paiement-recap-item"><strong>Voyageur :</strong> <span id="paiement-recap-voyageur">-</span></span>
+          </div>
+          <div class="paiement-recap-prix">
+            Total : <span id="paiement-recap-prix">0.00 DT</span>
+          </div>
+        </div>
+
+        <!-- Choix des 2 modes de paiement -->
+        <div class="modes-paiement-grid">
+          <!-- Option 1 : Paiement en ligne -->
+          <label class="mode-card actif" id="carte-mode-en-ligne" for="mode-en-ligne">
+            <div class="mode-card-header">
+              <input type="radio" name="modePaiement" id="mode-en-ligne" value="en_ligne" class="mode-radio" checked onchange="changerModePaiement('en_ligne')">
+              <span class="mode-card-title">Paiement en ligne</span>
+              <span class="mode-card-badge mode-card-badge--online">Recommandé</span>
+            </div>
+            <p class="mode-card-desc">
+              Réglez en toute sécurité dès maintenant par carte bancaire tunisienne ou portefeuille électronique. Votre place est 100% garantie.
+            </p>
+            
+            <div class="simulation-en-ligne">
+              <div class="simulation-titre">Moyens acceptés</div>
+              <div class="simulation-icones-pay">
+                <span class="pay-badge">💳 Carte Bancaire CIB</span>
+                <span class="pay-badge">VISA</span>
+                <span class="pay-badge">Mastercard</span>
+                <span class="pay-badge">D17</span>
+                <span class="pay-badge">Flouci</span>
+              </div>
+            </div>
+
+            <!-- Avertissement Sanction abandon -->
+            <div class="paiement-alerte paiement-alerte--sanction">
+              <span class="alerte-icone" aria-hidden="true">⚠️</span>
+              <div class="alerte-texte">
+                <strong>Politique d'annulation &amp; Sanction :</strong><br>
+                Tout abandon ou annulation de réservation à <strong>moins de 30 minutes du départ</strong> applique une <strong>sanction financière</strong> (retenue de 50% sur le montant remboursé pour dédommagement du siège bloqué).
+              </div>
+            </div>
+          </label>
+
+          <!-- Option 2 : Paiement à la station -->
+          <label class="mode-card" id="carte-mode-station" for="mode-station">
+            <div class="mode-card-header">
+              <input type="radio" name="modePaiement" id="mode-station" value="station" class="mode-radio" onchange="changerModePaiement('station')">
+              <span class="mode-card-title">Paiement à la station</span>
+              <span class="mode-card-badge mode-card-badge--station">Espèces</span>
+            </div>
+            <p class="mode-card-desc">
+              Bloquez votre place immédiatement et réglez en espèces directement au guichet de la gare avant le départ du louage.
+            </p>
+
+            <div class="simulation-en-ligne">
+              <div class="simulation-titre">Instructions de règlement</div>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">
+                Présentez votre code de réservation au guichet Louagi de la gare pour payer et retirer votre ticket officiel.
+              </p>
+            </div>
+
+            <!-- Avertissement Règle stricte des 15-20 min -->
+            <div class="paiement-alerte paiement-alerte--retard">
+              <span class="alerte-icone" aria-hidden="true">🚨</span>
+              <div class="alerte-texte">
+                <strong>Règle stricte des 15 à 20 minutes :</strong><br>
+                Vous devez vous présenter au guichet au plus tard <strong>15 à 20 minutes avant l'heure de départ</strong>. En cas de retard, votre réservation sera automatiquement annulée, votre siège sera réattribué aux passagers sur place, et <strong>le louage partira sans vous !</strong>
+              </div>
+            </div>
+          </label>
+        </div>
+
+        <!-- Case à cocher obligatoire de validation des conditions -->
+        <div class="validation-conditions-box">
+          <label class="conditions-label" for="check-conditions">
+            <input type="checkbox" id="check-conditions" class="conditions-checkbox" required>
+            <span>
+              J'ai lu et j'accepte expressément les <strong>conditions de réservation Louagi</strong> : la <strong>sanction financière</strong> en cas d'abandon de réservation à moins de 30 min du départ, ainsi que la <strong>règle stricte de ponctualité de 15 à 20 minutes</strong> (le louage part sans moi si je ne suis pas présent au guichet à temps).
+            </span>
+          </label>
+        </div>
+
+        <!-- Boutons d'action -->
+        <div class="paiement-actions">
+          <button type="button" class="btn btn--outline" onclick="allerEtape(2); afficherPlaces();">&larr; Modifier mon siège</button>
+          <button type="button" id="btn-confirmer" class="btn btn--primary">Valider et Confirmer la réservation &rarr;</button>
+        </div>
+      </section>
+
+      <!-- Étape 4 : Confirmation & Billet électronique -->
+      <section id="etape-4" class="step-container cache" aria-labelledby="titre-etape-4">
+        <h2 id="titre-etape-4" class="step-inner-title">Étape 4 : Confirmation &amp; Billet électronique</h2>
+
+        <!-- Billet de confirmation -->
+        <div id="billet-confirmation" class="ticket-confirmation">
+          <div class="ticket-header">
+            <h3>Réservation Confirmée !</h3>
+            <p>Voici votre billet électronique officiel Louagi</p>
+            <div class="ticket-code-wrap">
+              Code : <span id="billet-code">LG-XXXX</span>
+            </div>
+          </div>
+          <div class="ticket-body">
+            <div class="recap-row">
+              <span class="recap-label">Trajet :</span>
+              <span id="billet-trajet" class="recap-valeur">-</span>
+            </div>
+            <div class="recap-row">
+              <span class="recap-label">Date &amp; Heure :</span>
+              <span id="billet-date" class="recap-valeur">-</span>
+            </div>
+            <div class="recap-row">
+              <span class="recap-label">Siège garanti :</span>
+              <span id="billet-place" class="recap-valeur">-</span>
+            </div>
+            <div class="recap-row">
+              <span class="recap-label">Voyageur :</span>
+              <span id="billet-passager" class="recap-valeur">-</span>
+            </div>
+            <div class="recap-row">
+              <span class="recap-label">Montant :</span>
+              <span id="billet-prix" class="recap-valeur">-</span>
+            </div>
+            <div class="recap-row">
+              <span class="recap-label">Mode de règlement :</span>
+              <span id="billet-mode-paiement" class="recap-valeur">-</span>
+            </div>
+          </div>
+          <div class="ticket-actions">
+            <a href="mes-reservations.html" class="btn btn--primary">Consulter mes réservations</a>
+            <button type="button" class="btn btn--outline" onclick="window.print();">Imprimer le billet</button>
+          </div>
+        </div>
+      </section>
+
+      </div><!-- /.reservation-flow -->
+    </div>
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="footer-section">
+    <div class="container">
+      <div class="footer-bottom">
+        <p class="footer-academic">Projet académique fictif, ISSAT Sousse, 2025/2026.</p>
+        <div class="footer-legal">
+          <a href="mentions-legales.html" class="footer-link footer-link--sub">Mentions légales &amp; Confidentialité</a>
+          <span class="footer-sep">|</span>
+          <span>Tous droits réservés &copy; 2026 Louagi</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion - Louagi</title>
+  <meta name="description" content="Connectez-vous à votre compte Louagi pour gérer vos réservations de louage.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../pages.css">
+
+  <script src="../js/stockage.js" defer></script>
+  <script src="../js/connexion.js" defer></script>
+</head>
+<body class="page-app">
+
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+  <!-- En-tête -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" aria-label="Retour à l'accueil Louagi">
+        <img src="../images/Logo%20Louagi%20_%20navette%20et%20rep%C3%A8re%20jaune.png" alt="Logo Louagi" width="46" height="46" class="logo-img">
+        <span class="brand-name">Loua<span class="brand-name--accent">gi</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="../index.html" class="nav-link">Accueil</a></li>
+          <li class="nav-item"><a href="inscription.html" class="nav-link">Créer un compte</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenu principal -->
+  <main id="main-content" class="main-content">
+    <div class="container">
+      <div class="auth-wrapper">
+        <div class="page-header-box">
+          <h1 class="page-title">Bienvenue sur Louagi</h1>
+          <p class="page-subtitle">Accédez à votre espace pour réserver et suivre vos voyages.</p>
+        </div>
+
+        <div class="auth-card">
+          <div id="message-erreur" class="alert alert--error cache" role="alert"></div>
+
+          <form id="form-connexion" novalidate>
+            <div class="form-field">
+              <label for="email" class="form-label">Adresse e-mail</label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="nom@exemple.tn" required>
+            </div>
+
+            <div class="form-field">
+              <label for="motDePasse" class="form-label">Mot de passe</label>
+              <input type="password" id="motDePasse" name="motDePasse" class="form-control" placeholder="••••••••" required>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--block">Se connecter</button>
+          </form>
+
+          <div class="auth-footer">
+            <p>Pas encore de compte ? <a href="inscription.html">Créer un compte</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="footer-section">
+    <div class="container">
+      <div class="footer-bottom">
+        <p class="footer-academic">Projet académique fictif, ISSAT Sousse, 2025/2026.</p>
+        <div class="footer-legal">
+          <a href="mentions-legales.html" class="footer-link footer-link--sub">Mentions légales &amp; Confidentialité</a>
+          <span class="footer-sep">|</span>
+          <span>Tous droits réservés &copy; 2026 Louagi</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -4,7 +4,7 @@
 > **Établissement :** ISSAT Sousse — Département Informatique  
 > **Niveau & Année :** FIA3 — Année Universitaire 2025 / 2026  
 > **Sujet 1 :** Page d'accueil d'une startup fictive (« Louagi »)  
-> **Slogan :** *« Réservez votre place, pas votre attente. »*
+> **Slogan :** _« Réservez votre place, pas votre attente. »_
 
 ---
 
@@ -24,7 +24,7 @@ Elle résout le problème historique des stations de louage (attente aléatoire,
 - **Séparation stricte :** Aucun style CSS dans le HTML, aucun attribut `style=""`.
 - **Responsive Design :** Approche Mobile-First (testé à 320 px, 768 px, 1024 px et 1440 px).
 - **Accessibilité :** Lien d'évitement (« Aller au contenu »), navigation clavier `:focus-visible`, contrastes conformes WCAG AA, balises `aria-label`.
-- **Performance :** Dépendance externe unique : Google Fonts (*Inter* et *Poppins*). Toutes les illustrations et icônes sont des SVG vectoriels locaux dans `/images`.
+- **Performance :** Dépendance externe unique : Google Fonts (_Inter_ et _Poppins_). Toutes les illustrations et icônes sont des SVG vectoriels locaux dans `/images`.
 
 ---
 
@@ -50,14 +50,14 @@ Elle résout le problème historique des stations de louage (attente aléatoire,
 
 ## 4. Charte Graphique
 
-| Élément | Valeur | Usage |
-| :--- | :--- | :--- |
-| **Couleur principale** | `#0B3C5D` | Bleu profond (identité, titres, navigation, footer) |
-| **Couleur d'accent** | `#F5B700` | Jaune louage tunisien (boutons CTA, badges, surlignages) |
-| **Fonds alternés** | `#FFFFFF` & `#F4F7FA` | Alternance douce des sections pour une lisibilité optimale |
-| **Texte principal** | `#1F2933` | Gris foncé pour un contraste maximal (WCAG AAA) |
-| **Police des titres** | `Poppins` (700) | Typographie moderne et affirmée |
-| **Police du texte** | `Inter` (400, 500, 600) | Lisibilité et clarté sur tous les écrans |
+| Élément                | Valeur                  | Usage                                                      |
+| :--------------------- | :---------------------- | :--------------------------------------------------------- |
+| **Couleur principale** | `#0B3C5D`               | Bleu profond (identité, titres, navigation, footer)        |
+| **Couleur d'accent**   | `#F5B700`               | Jaune louage tunisien (boutons CTA, badges, surlignages)   |
+| **Fonds alternés**     | `#FFFFFF` & `#F4F7FA`   | Alternance douce des sections pour une lisibilité optimale |
+| **Texte principal**    | `#1F2933`               | Gris foncé pour un contraste maximal (WCAG AAA)            |
+| **Police des titres**  | `Poppins` (700)         | Typographie moderne et affirmée                            |
+| **Police du texte**    | `Inter` (400, 500, 600) | Lisibilité et clarté sur tous les écrans                   |
 
 ---
 
@@ -72,5 +72,5 @@ Elle résout le problème historique des stations de louage (attente aléatoire,
 7. **Équipe fondatrice (`#equipe`) :** 4 profils avec avatars SVG, rôles et effet de zoom/rotation au survol.
 8. **Témoignages & FAQ :** Avis de voyageurs et accordéon 100% HTML5 natif sans JavaScript (`<details>` / `<summary>`).
 9. **Contact (`#contact`) :** Formulaire complet avec validation HTML5 native (`required`, `type="email"`, `type="tel"`, `minlength`), coordonnées réelles de Sousse et liens réseaux sociaux.
-10. **Footer institutionnel :** Liens rapides, mentions légales et mention obligatoire : *« Projet académique fictif, ISSAT Sousse, 2025/2026 »*.
+10. **Footer institutionnel :** Liens rapides, mentions légales et mention obligatoire : _« Projet académique fictif, ISSAT Sousse, 2025/2026 »_.
 11. **Prise en charge de `prefers-reduced-motion` :** Désactivation propre des animations pour les utilisateurs ayant activé l'option d'accessibilité.
