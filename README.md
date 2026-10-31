@@ -1,76 +1,114 @@
-# Louagi — Landing Page Fictive
+# Louagi — Plateforme Web de Réservation de Louage en Tunisie
 
-> **Mini projet web universitaire**  
-> **Établissement :** ISSAT Sousse — Département Informatique  
-> **Niveau & Année :** FIA2 — Année Universitaire 2026 / 2027  
-> **Sujet 1 :** Page d'accueil d'une startup fictive (« Louagi »)  
+> **Projet Académique Web**  
+> **Établissement :** Institut Supérieur des Sciences Appliquées et de Technologie de Sousse (ISSAT Sousse)  
+> **Filière :** Département Informatique  
+> **Année Universitaire :** 2026 / 2027  
 > **Slogan :** _« Réservez votre place, pas votre attente. »_
 
 ---
 
 ## 1. Description du Projet
 
-**Louagi** est une plateforme web tunisienne innovante dédiée à la réservation de louage interurbain à distance.  
-Elle résout le problème historique des stations de louage (attente aléatoire, départs imprévisibles uniquement lorsque le véhicule est complet) en permettant aux voyageurs de réserver leur siège garanti et leur horaire en amont.
+**Louagi** est une plateforme web moderne et intuitive dédiée à la modernisation du transport interurbain par louage en Tunisie.  
+Elle résout la contrainte historique des stations (attente aléatoire, départs imprévisibles, sièges non garantis) en permettant aux usagers de planifier leurs déplacements, de choisir leur place numérotée dans le véhicule et de réserver leur billet en ligne ou en station.
 
 ---
 
-## 2. Contraintes Techniques Respectées (100% Conformes)
+## 2. Architecture & Technologies
 
-- **Technologies :** **HTML5 sémantique** et **CSS3 pur uniquement**.
-- **Aucun framework :** Aucun Bootstrap, Tailwind ou librairie tierce.
-- **Aucun JavaScript :** Menu burger, accordéon FAQ, animations et interactions fonctionnent exclusivement en CSS3 pur.
-- **Validation W3C :** **0 erreur** au validateur officiel W3C HTML et **0 erreur** au validateur W3C CSS.
-- **Séparation stricte :** Aucun style CSS dans le HTML, aucun attribut `style=""`.
-- **Responsive Design :** Approche Mobile-First (testé à 320 px, 768 px, 1024 px et 1440 px).
-- **Accessibilité :** Lien d'évitement (« Aller au contenu »), navigation clavier `:focus-visible`, contrastes conformes WCAG AA, balises `aria-label`.
-- **Performance :** Dépendance externe unique : Google Fonts (_Inter_ et _Poppins_). Toutes les illustrations et icônes sont des SVG vectoriels locaux dans `/images`.
+Le projet repose sur une architecture web front-end légère, ultra-rapide et sans framework lourd :
+
+- **HTML5 Sémantique :** Structure accessible (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`).
+- **CSS3 Pur & Modulaire :**
+  - `style.css` : Feuille de styles principale de la landing page (mise en page, animations fluides, composantes partagées).
+  - `pages.css` : Styles dédiés aux applications internes (thème sombre avec voile d'ambiance, stepper, plan d'habitacle et cartes de paiement).
+- **Vanilla JavaScript (ES6) :** Aucun framework ni dépendance externe. Code structuré, modulaire et optimisé.
+- **Stockage Local (`localStorage`) :** Persistance des comptes voyageurs, des sessions utilisateur et de l'historique des réservations.
+- **Optimisation des Performances (WebPerf) :**
+  - Formats d'image modernes **WebP** (réduction de plus de 90% du poids des visuels).
+  - Chargement asynchrone non-bloquant des polices Google Fonts.
+  - Préchargement haute priorité (`preload`, `fetchpriority="high"`) des ressources critiques (LCP).
 
 ---
 
 ## 3. Arborescence du Projet
 
-```
-/louagi-landing-page
-├── index.html                   # Page d'accueil principale
-├── style.css                    # Feuille de styles unique et commentée
-├── README.md                    # Documentation du projet
-├── /images                      # Logos, illustrations de louage et icônes SVG
-│   ├── Logo Louagi _ navette et repère jaune.png
-│   ├── Réservation Louagi à la station tunisienne.png
-│   ├── icon-*.svg
-│   ├── service-*.svg
-│   ├── avatar-*.svg
-│   └── social-*.svg
-└── /pages                       # Pages secondaires
-    └── mentions-legales.html    # Mentions légales & cadre académique
+```text
+louagi-landing-page/
+├── index.html                    # Landing page officielle
+├── style.css                     # Styles généraux & landing page
+├── pages.css                     # Styles des pages applicatives internes
+├── README.md                     # Documentation du projet
+├── js/
+│   ├── main.js                   # Interactions landing page (menu scroll, carrousel, validation)
+│   ├── stockage.js               # Gestionnaire centralisé du localStorage
+│   ├── data.js                   # Données simulées (trajets, horaires, tarifs)
+│   ├── connexion.js              # Authentification voyageur & session
+│   ├── inscription.js            # Création de compte & validation de formulaire
+│   ├── reservation.js            # Moteur de réservation interactif en 4 étapes
+│   └── mes-reservations.js       # Affichage & gestion des billets réservés
+├── pages/
+│   ├── connexion.html            # Interface de connexion
+│   ├── inscription.html          # Formulaire d'inscription voyageur
+│   ├── reservation.html          # Tunnel de réservation (Trajet -> Siège -> Paiement -> Billet)
+│   ├── mes-reservations.html     # Espace voyageur & historique des billets
+│   └── mentions-legales.html     # Mentions légales & cadre académique
+└── images/                       # Assets vectoriels (SVG), logos et photographies WebP
+    ├── logo-louagi.webp          # Logo officiel optimisé
+    ├── terminal-minibus-soleil.webp # Image d'ambiance optimisée LCP
+    ├── icon-*.svg                # Icônes fonctionnelles
+    └── avatar-*.svg              # Avatars des avis et membres de l'équipe
 ```
 
 ---
 
-## 4. Charte Graphique
+## 4. Parcours & Fonctionnalités Clés
 
-| Élément                | Valeur                  | Usage                                                      |
-| :--------------------- | :---------------------- | :--------------------------------------------------------- |
-| **Couleur principale** | `#0B3C5D`               | Bleu profond (identité, titres, navigation, footer)        |
-| **Couleur d'accent**   | `#F5B700`               | Jaune louage tunisien (boutons CTA, badges, surlignages)   |
-| **Fonds alternés**     | `#FFFFFF` & `#F4F7FA`   | Alternance douce des sections pour une lisibilité optimale |
-| **Texte principal**    | `#1F2933`               | Gris foncé pour un contraste maximal (WCAG AAA)            |
-| **Police des titres**  | `Poppins` (700)         | Typographie moderne et affirmée                            |
-| **Police du texte**    | `Inter` (400, 500, 600) | Lisibilité et clarté sur tous les écrans                   |
+### 🌟 A. Page d'Accueil (`index.html`)
+1. **Menu Dynamique au Scroll :** Le header s'escamote lors du défilement vers le bas et réapparaît automatiquement lors de la remontée avec un effet d'élévation.
+2. **Carrousel de Témoignages :** Défilement automatique toutes les 5 secondes, transitions fluides, commandes manuelles (flèches et puces indicatrices) et pause intelligente au survol.
+3. **Validation Avancée du Formulaire de Contact :** Contrôle instantané sous chaque champ (format d'email, longueur du nom, numéro tunisien valide) et retour utilisateur par toast notification.
+4. **Moteur de Recherche Rapide :** Sélection des gares et dates pour orienter directement l'usager vers la réservation.
+
+### 🚐 B. Tunnel de Réservation en 4 Étapes (`reservation.html`)
+1. **Étape 1 — Trajet & Horaires :** Recherche par gare de départ (Tunis, Sousse, Sfax, Monastir...) avec filtrage dynamique des départs et affichage des tarifs en dinars tunisiens (DT).
+2. **Étape 2 — Choix Interactif du Siège :** Modélisation visuelle de l'habitacle d'un louage 8 places (poste chauffeur, rangée avant 2 places, rangées intermédiaire et arrière de 3 places) avec états temps réel (*Libre*, *Occupé*, *Votre sélection*).
+3. **Étape 3 — Mode de Paiement & Validation des Conditions :**
+   - **Paiement en ligne :** Carte bancaire CIB, Visa/Mastercard, D17 ou Flouci avec garantie intégrale de la place (mention des pénalités d'abandon à moins de 30 min du départ).
+   - **Paiement à la station :** Règlement en espèces au guichet avec rappel strict de la règle des **15 à 20 minutes** d'anticipation avant le départ.
+   - Case à cocher obligatoire d'acceptation des conditions de transport.
+4. **Étape 4 — Confirmation & Billet Électronique :** Génération d'un code de réservation unique (`LG-XXXX`), récapitulatif détaillé et option d'impression du billet.
+
+### 👤 C. Espace Voyageur & Authentification
+- **Inscription & Connexion :** Contrôle des doublons d'adresse électronique, vérification des mots de passe et gestion automatique de l'état connecté.
+- **Mes Réservations (`mes-reservations.html`) :** Consultation de l'ensemble des réservations effectuées avec badges d'état (*Payé en ligne* ou *À régler au guichet*).
 
 ---
 
-## 5. Fonctionnalités Clés Implémentées
+## 5. Charte Graphique
 
-1. **Header fixe :** Reste visible au défilement avec effet de flou (`backdrop-filter: blur`), logo SVG et bouton CTA « Réserver ».
-2. **Menu burger pur CSS :** Implémenté avec la technique `input[type="checkbox"]` + `label` + `:checked ~ nav` avec animation fluide des barres en croix.
-3. **Hero section :** Titre unique `<h1>`, sous-titre explicatif, formulaire de recherche HTML5 complet (départ, destination, date, heure), indicateurs de confiance et illustration SVG d'un louage tunisien traversant l'écran en boucle CSS (`@keyframes`).
-4. **Section À propos (`#apropos`) :** Mission, comparaison problème / solution et grille de 4 chiffres clés statiques avec survol interactif.
-5. **Comment ça marche :** 3 étapes illustrées et numérotées menant de la réservation au voyage.
-6. **Services (`#services`) :** Grille responsive de 6 cartes avec icônes personnalisées et effet d'élévation au survol (`translateY(-6px)`).
-7. **Équipe fondatrice (`#equipe`) :** 4 profils avec avatars SVG, rôles et effet de zoom/rotation au survol.
-8. **Témoignages & FAQ :** Avis de voyageurs et accordéon 100% HTML5 natif sans JavaScript (`<details>` / `<summary>`).
-9. **Contact (`#contact`) :** Formulaire complet avec validation HTML5 native (`required`, `type="email"`, `type="tel"`, `minlength`), coordonnées réelles de Sousse et liens réseaux sociaux.
-10. **Footer institutionnel :** Liens rapides, mentions légales et mention obligatoire : _« Projet académique fictif, ISSAT Sousse, 2025/2026 »_.
-11. **Prise en charge de `prefers-reduced-motion` :** Désactivation propre des animations pour les utilisateurs ayant activé l'option d'accessibilité.
+| Élément | Code Couleur / Rendu | Signification & Usage |
+| :--- | :--- | :--- |
+| **Bleu Profond** | `#0B3C5D` | Couleur primaire institutionnelle (stabilité, confiance, sécurité) |
+| **Jaune Louage** | `#F5B700` | Couleur d'accentuation inspirée des bandes emblématiques des louages tunisiens |
+| **Bleu Nuit (Dark)** | `#0B131B` | Fond sombre des pages applicatives rehaussé d'un voile photo |
+| **Typographie Titres** | `Poppins` (Bold / SemiBold) | Modernité, lisibilité et impact visuel |
+| **Typographie Corps** | `Inter` (Regular / Medium) | Excellente lisibilité sur terminaux mobiles |
+
+---
+
+## 6. Lancement & Test du Projet
+
+Le projet ne nécessite aucune installation de serveur backend complexe ni compilation :
+
+1. Cloner ou télécharger le dossier du projet.
+2. Ouvrir le fichier `index.html` dans n'importe quel navigateur moderne (Chrome, Firefox, Edge, Safari) ou lancer un serveur local léger (ex. extension *Live Server* sous VS Code / Antigravity).
+3. Naviguer entre la page d'accueil, la création de compte et la réservation d'un trajet.
+
+---
+
+## 7. Mentions Académiques
+
+Ce projet est réalisé dans un cadre pédagogique et académique au sein de l'**ISSAT Sousse**.  
+Les données de transport, transporteurs et avis sont présentés à des fins de démonstration et d'apprentissage des bonnes pratiques du développement Web moderne (HTML5, CSS3, JavaScript ES6 & Web Performance).
