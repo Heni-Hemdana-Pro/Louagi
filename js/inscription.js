@@ -1,7 +1,3 @@
-/* ==========================================================================
-   inscription.js - Gestion de la création de compte voyageur
-   ========================================================================== */
-
 // Vérifie les mots de passe et l'e-mail, enregistre le compte puis redirige vers la connexion
 function creerCompte(event) {
   event.preventDefault(); //rechargement de la page

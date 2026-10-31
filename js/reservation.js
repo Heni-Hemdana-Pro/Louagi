@@ -1,7 +1,3 @@
-/* ==========================================================================
-   reservation.js - Parcours de réservation de louage en 3 étapes
-   ========================================================================== */
-
 // Vérifie que l'utilisateur est bien connecté avant d'autoriser la réservation
 const sessionEnCours = utilisateurConnecte();
 if (!sessionEnCours) {

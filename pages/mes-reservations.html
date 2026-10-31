@@ -6,10 +6,15 @@
   <title>Mes Réservations - Louagi</title>
   <meta name="description" content="Consultez et gérez vos réservations de louage effectuées sur Louagi.">
   
-  <!-- Polices Google Fonts -->
+  <!-- Polices Google Fonts (non-bloquantes) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap">
+  </noscript>
+  <link rel="preload" as="image" href="../images/terminal-minibus-soleil.webp" type="image/webp" fetchpriority="high">
   
   <!-- Feuilles de style -->
   <link rel="stylesheet" href="../style.css">
@@ -27,7 +32,7 @@
   <header class="site-header">
     <div class="header-container">
       <a href="../index.html" class="brand-logo" aria-label="Retour à l'accueil Louagi">
-        <img src="../images/Logo%20Louagi%20_%20navette%20et%20rep%C3%A8re%20jaune.png" alt="Logo Louagi" width="46" height="46" class="logo-img">
+        <img src="../images/logo-louagi.webp" alt="Logo Louagi" width="46" height="46" class="logo-img" decoding="async">
         <span class="brand-name">Loua<span class="brand-name--accent">gi</span></span>
       </a>
       <nav class="main-nav" aria-label="Navigation">

@@ -7,7 +7,11 @@
   <meta name="description" content="Louagi est la première plateforme tunisienne de réservation de louage à distance. Choisissez votre trajet, votre horaire et réservez votre place sans attente.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap">
+  </noscript>
   <link rel="preload" as="image" href="images/hero-station-louagi.webp" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -489,7 +493,7 @@
             </div>
           </div>
           <div class="contact-card">
-            <form action="#" method="post" class="contact-form">
+            <form action="#" method="post" class="contact-form" id="form-contact" novalidate>
               <div class="form-group">
                 <label for="contact-nom" class="form-label">Nom complet <span class="required-mark">*</span></label>
                 <input type="text" id="contact-nom" name="nom" class="form-input" placeholder="Ex. Mohamed Ben Salah" required minlength="2">
@@ -588,6 +592,9 @@
       </div>
     </div>
   </footer>
+
+  <!-- Script principal : menu scroll, carrousel, validation -->
+  <script src="js/main.js" defer></script>
 
 </body>
 </html>

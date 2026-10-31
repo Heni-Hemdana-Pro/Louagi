@@ -1,7 +1,3 @@
-/* ==========================================================================
-   data.js - Liste des trajets de louage disponibles (données fictives)
-   ========================================================================== */
-
 // Tableau des trajets interurbains avec horaires, tarifs et places occupées par défaut
 const trajets = [
   { id: 1, depart: "Sousse", destination: "Tunis", heure: "07:30", prix: 11.5, placesOccupees: [2, 5] },

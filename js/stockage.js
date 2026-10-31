@@ -1,7 +1,3 @@
-/* ==========================================================================
-   stockage.js - Gestion du stockage local (localStorage) pour Louagi
-   ========================================================================== */
-
 // Lit une valeur dans localStorage (renvoie un tableau vide par défaut si aucune donnée)
 function lireDonnees(cle) {
   const donnees = localStorage.getItem(cle);

@@ -1,7 +1,3 @@
-/* ==========================================================================
-   connexion.js - Gestion de l'authentification de l'utilisateur
-   ========================================================================== */
-
 // Compare les identifiants saisis avec les comptes enregistrés et ouvre la session
 function seConnecter(event) {
   event.preventDefault();

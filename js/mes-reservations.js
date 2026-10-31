@@ -1,7 +1,3 @@
-/* ==========================================================================
-   mes-reservations.js - Affichage et gestion des réservations du voyageur
-   ========================================================================== */
-
 // Vérifie que l'utilisateur est connecté, sinon redirige vers la page de connexion
 const sessionUtilisateur = utilisateurConnecte();
 if (!sessionUtilisateur) {
