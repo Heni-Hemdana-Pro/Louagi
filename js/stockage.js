@@ -1,16 +1,20 @@
-// Lit une valeur dans localStorage (renvoie un tableau vide par défaut si aucune donnée)
+// Lit une valeur dans localStorage
 function lireDonnees(cle) {
-  const donnees = localStorage.getItem(cle);
-  return donnees ? JSON.parse(donnees) : [];
+  const d = localStorage.getItem(cle);
+  return d ? JSON.parse(d) : [];
 }
-
-// Enregistre une valeur convertie en format JSON dans localStorage
 function sauvegarderDonnees(cle, valeur) {
   localStorage.setItem(cle, JSON.stringify(valeur));
 }
-
-// Renvoie l'utilisateur actuellement connecté ou null si aucune session active
+// Utilisateur connecté : lit sessionStorage ou localStorage
 function utilisateurConnecte() {
-  const session = localStorage.getItem("louagi_session");
-  return session ? JSON.parse(session) : null;
+  const s = sessionStorage.getItem('louagi_session') || localStorage.getItem('louagi_session');
+  return s ? JSON.parse(s) : null;
+}
+// Déconnexion complète
+function deconnecter() {
+  localStorage.removeItem('louagi_session');
+  sessionStorage.removeItem('louagi_session');
+  fetch('../php/deconnexion.php').catch(function() {});
+  window.location.href = 'connexion.html';
 }

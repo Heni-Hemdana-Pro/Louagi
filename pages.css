@@ -2,7 +2,7 @@
 
 /* Structure générale */
 body.page-app { min-height: 100vh; display: flex; flex-direction: column; background-color: #0B131B; color: var(--text); position: relative; overflow-x: hidden; }
-body.page-app::before { content: ""; position: fixed; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.68)), url('../images/terminal-minibus-soleil.webp') center/cover no-repeat fixed; z-index: 0; pointer-events: none; }
+body.page-app::before { content: ""; position: fixed; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.68)), url('images/terminal-minibus-soleil.webp') center/cover no-repeat fixed; z-index: 0; pointer-events: none; }
 body.page-app .site-header { position: fixed; top: 0; left: 0; right: 0; height: var(--header-h); background: #FFFFFF; border-bottom: 1px solid rgba(0,0,0,0.08); box-shadow: 0 4px 16px rgba(0,0,0,0.12); z-index: 1000; }
 body.page-app .main-content { flex: 1; padding-top: calc(var(--header-h) + 40px); padding-bottom: 60px; position: relative; z-index: 1; }
 

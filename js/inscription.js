@@ -1,40 +1,25 @@
-// Vérifie les mots de passe et l'e-mail, enregistre le compte puis redirige vers la connexion
+// Crée un compte via fetch → php/inscription.php
 function creerCompte(event) {
-  event.preventDefault(); //rechargement de la page
+  event.preventDefault();
+  const messageErreur = document.querySelector('#message-erreur');
+  messageErreur.classList.add('cache');
 
-  const nom = document.querySelector("#nom").value.trim();
-  const email = document.querySelector("#email").value.trim().toLowerCase();
-  const telephone = document.querySelector("#telephone").value.trim();
-  const motDePasse = document.querySelector("#motDePasse").value;
-  const confirmation = document.querySelector("#confirmation").value;
-  const messageErreur = document.querySelector("#message-erreur");
-
-  if (motDePasse !== confirmation) {
-    messageErreur.textContent = "Les deux mots de passe ne sont pas identiques.";
-    messageErreur.classList.remove("cache");
-    return;
-  }
-
-  const comptes = lireDonnees("louagi_comptes");
-  const existeDeja = comptes.find(function(compte) {
-    return compte.email === email;
-  });
-
-  if (existeDeja) {
-    messageErreur.textContent = "Un compte existe déjà avec cette adresse e-mail.";
-    messageErreur.classList.remove("cache");
-    return;
-  }
-
-  comptes.push({
-    nom: nom,
-    email: email,
-    telephone: telephone,
-    motDePasse: motDePasse
-  });
-  sauvegarderDonnees("louagi_comptes", comptes);
-  window.location.href = "connexion.html?succes=1";
+  fetch('../php/inscription.php', { method: 'POST', body: new FormData(event.target) })
+    .then(function(r) { return r.json(); })
+    .then(function(res) {
+      if (res.ok) {
+        localStorage.setItem('louagi_session', JSON.stringify(res.utilisateur));
+        sessionStorage.setItem('louagi_session', JSON.stringify(res.utilisateur));
+        window.location.href = 'reservation.html';
+      } else {
+        messageErreur.textContent = res.erreur || 'Erreur lors de l\'inscription.';
+        messageErreur.classList.remove('cache');
+      }
+    })
+    .catch(function(err) {
+      messageErreur.textContent = 'Erreur réseau. Vérifiez que XAMPP tourne.';
+      messageErreur.classList.remove('cache');
+    });
 }
 
-// Écoute la soumission du formulaire d'inscription
-document.querySelector("#form-inscription").addEventListener("submit", creerCompte);
+document.querySelector('#form-inscription').addEventListener('submit', creerCompte);

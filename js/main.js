@@ -103,15 +103,51 @@ window.addEventListener('scroll', function () {
     });
     if (!ok) { form.querySelector('.champ--erreur').focus(); return; }
 
-    // Toast succès
+    // Envoi vers PHP via fetch
+    const btn = form.querySelector('[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = 'Envoi en cours…';
+
+    fetch('php/contact.php', { method: 'POST', body: new FormData(form) })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        afficherToast(data.ok
+          ? '✅ Message envoyé ! Réponse sous 24-48h.'
+          : '❌ Erreur : ' + (data.erreur || 'Veuillez réessayer.'),
+          data.ok ? '#166534' : '#991B1B'
+        );
+        if (data.ok) {
+          form.reset();
+          form.querySelectorAll('.champ--erreur, .champ--valide').forEach(function (c) {
+            c.className = c.className.replace(/champ--(erreur|valide)/g, '').trim();
+          });
+        }
+      })
+      .catch(function () { afficherToast('❌ Erreur réseau. Vérifiez que XAMPP tourne.', '#991B1B'); })
+      .finally(function () { btn.disabled = false; btn.textContent = 'Envoyer le message'; });
+  });
+
+  function afficherToast(texte, bg) {
     const t = document.createElement('div');
     t.className = 'toast';
-    t.textContent = '✅ Message envoyé ! Réponse sous 24-48h.';
+    t.style.background = bg || '#166534';
+    t.textContent = texte;
     document.body.appendChild(t);
     requestAnimationFrame(function () { t.classList.add('toast--visible'); });
     setTimeout(function () { t.classList.remove('toast--visible'); setTimeout(function () { t.remove(); }, 400); }, 4000);
-    form.reset();
-    form.querySelectorAll('.champ--erreur, .champ--valide').forEach(function (c) { c.className = c.className.replace(/champ--(erreur|valide)/g, ''); });
-  });
+  }
 })();
 
+
+// 4. TRACKING CLICS — envoie chaque clic vers php/clics.php
+(function () {
+  document.querySelectorAll('[data-track]').forEach(function (el) {
+    el.addEventListener('click', function () {
+      fetch('php/clics.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ bouton: el.dataset.track })
+      }).catch(function () {}); // silencieux si XAMPP éteint
+    });
+  });
+})();

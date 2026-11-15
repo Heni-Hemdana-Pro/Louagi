@@ -1,29 +1,25 @@
-// Compare les identifiants saisis avec les comptes enregistrés et ouvre la session
+// Connexion via fetch → php/connexion.php
 function seConnecter(event) {
   event.preventDefault();
+  const messageErreur = document.querySelector('#message-erreur');
+  messageErreur.classList.add('cache');
 
-  const email = document.querySelector("#email").value.trim().toLowerCase();
-  const motDePasse = document.querySelector("#motDePasse").value;
-  const messageErreur = document.querySelector("#message-erreur");
-  const comptes = lireDonnees("louagi_comptes");
-  const compteTrouve = comptes.find(function(compte) {
-    return compte.email === email && compte.motDePasse === motDePasse;
-  });
-
-  if (!compteTrouve) {
-    messageErreur.textContent = "E-mail ou mot de passe incorrect.";
-    messageErreur.classList.remove("cache");
-    return;
-  }
-
-  sauvegarderDonnees("louagi_session", {
-    nom: compteTrouve.nom,
-    email: compteTrouve.email,
-    telephone: compteTrouve.telephone
-  });
-
-  window.location.href = "reservation.html";
+  fetch('../php/connexion.php', { method: 'POST', body: new FormData(event.target) })
+    .then(function(r) { return r.json(); })
+    .then(function(res) {
+      if (res.ok) {
+        localStorage.setItem('louagi_session', JSON.stringify(res.utilisateur));
+        sessionStorage.setItem('louagi_session', JSON.stringify(res.utilisateur));
+        window.location.href = 'reservation.html';
+      } else {
+        messageErreur.textContent = res.erreur || 'Email ou mot de passe incorrect.';
+        messageErreur.classList.remove('cache');
+      }
+    })
+    .catch(function() {
+      messageErreur.textContent = 'Erreur réseau. Vérifiez que XAMPP tourne.';
+      messageErreur.classList.remove('cache');
+    });
 }
 
-// Écoute la soumission du formulaire de connexion
-document.querySelector("#form-connexion").addEventListener("submit", seConnecter);
+document.querySelector('#form-connexion').addEventListener('submit', seConnecter);
