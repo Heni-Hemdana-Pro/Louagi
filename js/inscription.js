@@ -1,4 +1,3 @@
-// Vérifie les mots de passe et l'e-mail, enregistre le compte puis redirige vers la connexion
 function creerCompte(event) {
   event.preventDefault(); //rechargement de la page
 
@@ -36,5 +35,4 @@ function creerCompte(event) {
   window.location.href = "connexion.html?succes=1";
 }
 
-// Écoute la soumission du formulaire d'inscription
 document.querySelector("#form-inscription").addEventListener("submit", creerCompte);

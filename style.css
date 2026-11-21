@@ -430,18 +430,70 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .site-header.header--cache { transform: translateY(-100%); }
 .site-header.header--compacte { background: rgba(255,255,255,0.98); box-shadow: 0 4px 24px rgba(11,60,93,0.14); }
 
-/* 2. CARROUSEL */
-.carrousel-wrapper { position: relative; width: 100%; max-width: 680px; margin: 0 auto; overflow: hidden; border-radius: var(--r-xl); }
-.carrousel-piste { display: flex; transition: transform 0.5s ease; }
-.carrousel-piste .testimonial-card { min-width: 100%; flex-shrink: 0; opacity: 0; transition: opacity 0.5s ease; pointer-events: none; }
-.carrousel-piste .testimonial-card.carr-actif { opacity: 1; pointer-events: auto; }
-.carr-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; border: none; border-radius: 50%; background: rgba(255,255,255,0.95); color: var(--primary); font-size: 1.1rem; cursor: pointer; box-shadow: 0 3px 12px rgba(11,60,93,0.15); z-index: 10; }
-.carr-btn:hover { background: var(--accent); }
-.carr-btn--prev { left: -20px; }
-.carr-btn--next { right: -20px; }
-.carr-dots { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
-.carr-dot { width: 10px; height: 10px; border: none; border-radius: 50%; background: var(--border); cursor: pointer; padding: 0; transition: all 0.3s ease; }
-.carr-dot.actif { background: var(--accent); width: 26px; border-radius: 5px; }
+/* 2. CARROUSEL TÉMOIGNAGES (Simple & Fiable) */
+.temoignages-carrousel {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 52px;
+}
+.carr-contenu .testimonial-card {
+  display: none;
+}
+.carr-contenu .testimonial-card.actif {
+  display: flex;
+  animation: fadeInCarrousel 0.35s ease;
+}
+@keyframes fadeInCarrousel {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.carr-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--primary);
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(11, 60, 93, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+.carr-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.carr-btn--prev { left: 0; }
+.carr-btn--next { right: 0; }
+.carr-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+.carr-dot {
+  width: 10px;
+  height: 10px;
+  border: none;
+  border-radius: 50%;
+  background: var(--border);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+.carr-dot.actif {
+  background: var(--accent);
+  width: 26px;
+  border-radius: 5px;
+}
 
 /* 3. VALIDATION CONTACT */
 .champ-erreur { display: block; font-size: 0.8rem; color: #DC2626; margin-top: 4px; font-weight: 500; }
@@ -452,7 +504,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 
 
 @media (max-width: 600px) {
-  .carr-btn--prev { left: 2px; }
-  .carr-btn--next { right: 2px; }
+  .temoignages-carrousel { padding: 0 40px; }
+  .carr-btn { width: 36px; height: 36px; font-size: 1rem; }
   .modal-boite { padding: 32px 20px; }
 }

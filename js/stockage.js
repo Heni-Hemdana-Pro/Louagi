@@ -1,4 +1,4 @@
-// Lit une valeur dans localStorage (renvoie un tableau vide par défaut si aucune donnée)
+// Lit une valeur dans localStorage sinn vide
 function lireDonnees(cle) {
   const donnees = localStorage.getItem(cle);
   return donnees ? JSON.parse(donnees) : [];

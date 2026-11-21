@@ -1,4 +1,3 @@
-// Vérifie que l'utilisateur est bien connecté avant d'autoriser la réservation
 const sessionEnCours = utilisateurConnecte();
 if (!sessionEnCours) {
   window.location.href = "connexion.html";
@@ -7,9 +6,9 @@ if (!sessionEnCours) {
 let trajetChoisi = null;
 let dateChoisie = "";
 let placeChoisie = null;
-let modePaiementChoisi = "en_ligne"; // Par défaut : paiement en ligne
+let modePaiementChoisi = "en_ligne"; // Par défaut en ligne
 
-// Permet de basculer interactivement entre les 2 modes de paiement
+
 function changerModePaiement(mode) {
   modePaiementChoisi = mode;
 
@@ -27,7 +26,7 @@ function changerModePaiement(mode) {
   }
 }
 
-// Filtre les trajets selon la ville de départ et la destination choisies
+// Filtre les trajets
 function rechercherTrajets(event) {
   event.preventDefault();
   const depart = document.querySelector("#depart").value;
@@ -41,7 +40,6 @@ function rechercherTrajets(event) {
   afficherTrajets(resultats);
 }
 
-// Crée une carte pour chaque trajet disponible trouvé
 function afficherTrajets(liste) {
   const conteneur = document.querySelector("#liste-trajets");
   conteneur.innerHTML = "";
@@ -68,7 +66,6 @@ function afficherTrajets(liste) {
   });
 }
 
-// Mémorise le trajet sélectionné et passe à l'étape du choix de place
 function choisirTrajet(id) {
   trajetChoisi = trajets.find(function(trajet) {
     return trajet.id === id;
@@ -78,7 +75,7 @@ function choisirTrajet(id) {
   afficherPlaces();
 }
 
-// Dessine les 8 places du louage selon les places libres et occupées
+// affichage des places de louage
 function afficherPlaces() {
   const conteneurAvant = document.querySelector("#places-avant");
   const conteneurMilieu = document.querySelector("#places-milieu");
@@ -89,7 +86,7 @@ function afficherPlaces() {
   conteneurArriere.innerHTML = "";
 
   const reservations = lireDonnees("louagi_reservations");
-  const occupees = [...trajetChoisi.placesOccupees];
+  const occupees = [...trajetChoisi.placesOccupees]; // copie de tableau au lieu de reference pas de modif dans data.js
 
   reservations.forEach(function(reservation) {
     if (reservation.trajetId === trajetChoisi.id && reservation.date === dateChoisie) {
@@ -101,11 +98,11 @@ function afficherPlaces() {
     const bouton = document.createElement("button");
     bouton.type = "button";
     bouton.id = "siege-" + numero;
-    const estOccupee = occupees.includes(numero);
+    const estOccupee = occupees.includes(numero); // verif
 
     if (estOccupee) {
       bouton.className = "siege-fauteuil siege-fauteuil--occupe";
-      bouton.disabled = true;
+      bouton.disabled = true; // inactif
       bouton.innerHTML = `
         <span class="fauteuil-tete"></span>
         <span class="fauteuil-corps">
@@ -115,7 +112,7 @@ function afficherPlaces() {
         <span class="fauteuil-assise"></span>
       `;
     } else {
-      const estChoisie = (placeChoisie === numero);
+      const estChoisie = (placeChoisie === numero); // test de la place 
       bouton.className = "siege-fauteuil siege-fauteuil--libre" + (estChoisie ? " siege-fauteuil--choisi" : "");
       bouton.innerHTML = `
         <span class="fauteuil-tete"></span>
@@ -140,14 +137,13 @@ function afficherPlaces() {
   }
 }
 
-// Sélectionne le numéro de place cliqué et passe à l'étape 3 (Mode de paiement)
 function choisirPlace(numero) {
   placeChoisie = numero;
   allerEtape(3);
   afficherEtapePaiement();
 }
 
-// Affiche les informations complètes du voyage dans l'étape de paiement
+// Affiche les informations complètes
 function afficherEtapePaiement() {
   const session = utilisateurConnecte();
 
@@ -207,21 +203,19 @@ function confirmerReservation() {
   allerEtape(4);
 }
 
-// Crée un code de réservation aléatoire au format LG-XXXX
+// Creationn de code
 function genererCode() {
   const aleatoire = Math.floor(1000 + Math.random() * 9000);
   return "LG-" + aleatoire;
 }
 
-// Bascule l'affichage vers l'étape demandée et met à jour les indicateurs et les lignes
-function allerEtape(numero) {
+
+function allerEtape(numero) { // Bascule l'affichage vers l'étape demandée
   const etapes = [1, 2, 3, 4];
 
-  // Met à jour l'affichage des 4 panneaux et des 4 indicateurs
   etapes.forEach(function(index) {
     const panneau = document.querySelector("#etape-" + index);
     const indicateur = document.querySelector("#stepper-" + index);
-
     if (panneau) {
       if (index === numero) {
         panneau.classList.remove("cache");
@@ -229,7 +223,6 @@ function allerEtape(numero) {
         panneau.classList.add("cache");
       }
     }
-
     if (indicateur) {
       if (index === numero) {
         indicateur.className = "step-item actif";
@@ -240,10 +233,7 @@ function allerEtape(numero) {
       }
     }
   });
-
-  // Met à jour la couleur des lignes entre les étapes :
-  // En avançant vers l'étape suivante, la ligne devient JAUNE (classe .actif).
-  // Si on revient en arrière, la ligne redevient GRISE automatiquement !
+  // couleur des lignes 
   for (let i = 1; i <= 3; i++) {
     const ligne = document.querySelector("#step-line-" + i);
     if (ligne) {
@@ -254,11 +244,9 @@ function allerEtape(numero) {
       }
     }
   }
-
-  // Repositionne doucement l'utilisateur en haut du flux de réservation
+// aniamation
   window.scrollTo({ top: 120, behavior: "smooth" });
 }
 
-// Initialisation des écouteurs d'événements
 document.querySelector("#form-recherche").addEventListener("submit", rechercherTrajets);
 document.querySelector("#btn-confirmer").addEventListener("click", confirmerReservation);

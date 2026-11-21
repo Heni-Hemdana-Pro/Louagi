@@ -20,10 +20,9 @@ function seConnecter(event) {
     nom: compteTrouve.nom,
     email: compteTrouve.email,
     telephone: compteTrouve.telephone
-  });
+  }); // on sauvegarde pas le mdp 
 
   window.location.href = "reservation.html";
 }
 
-// Écoute la soumission du formulaire de connexion
-document.querySelector("#form-connexion").addEventListener("submit", seConnecter);
+document.querySelector("#form-connexion").addEventListener("submit", seConnecter);x
